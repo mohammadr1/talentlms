@@ -5,7 +5,7 @@ import { Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
-import welcome from './components/welcome';
+import Welcome from './components/Welcome';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Route path="/" component={Home} exact={true}/>
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
-      <Route path="/welcome" component={welcome} />
+      <Route path="/welcome" component={Welcome} />
     </div>
   );
 }

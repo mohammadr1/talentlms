@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import { Link } from 'react-router-dom';
 
 
-class About extends Component{
+class Welcome extends Component{
   render(){
     return (
       <section class="row">
@@ -14,4 +14,4 @@ class About extends Component{
   }
 }
 
-export default About;
+export default Welcome;
