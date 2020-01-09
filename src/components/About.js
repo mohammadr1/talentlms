@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 class About extends Component{
   render(){
     return (
-        <div>
-            About
+        <div style={{marginTop:60}}>
+            <h1>About</h1>
         </div>
     );
   }
