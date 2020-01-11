@@ -1,3 +1,18 @@
+@font-face {
+    font-family: IRANSansWeb;
+    src: url('../fonts/eot/IRANSansWeb.eot');
+    src: url('../fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/woff/IRANSansWeb.woff') format('woff'),
+        url('../fonts/ttf/IRANSansWeb.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800');
+
+
+body{
+    font-family: IRANSansWeb;
+}
 .card{
     display: inline-block;
     margin: 100px;
@@ -7,8 +22,126 @@
     height: 200px;
 }
 /*********************************************welcome-page***********************************************/
-.welcome-main-card{
-    background-color: #f1f1f1;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+.CreateCourse-main-card{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+.page-path{
+    list-style: none;
+    direction: rtl;
+    margin-bottom: 0px;
+}
+.first-page,.breadcrumb-item::before{
+    color: #f1f1f1 !important;
+    font-size: 12px;
+
+}
+.page-path li{
+    color: #f1f1f1 !important;
+}
+
+/*upload image*/
+    .upload-course-pic{
+        width: 7rem;
+    }
+  .avatar {
+    width: 7.5em;
+    height: 4em;
+    background: #c1c1c1;
+    margin-top: -60px;
+    position: relative;
+    opacity: 0.7;
+    border:0.5px solid;
+    border-radius: 5px;
+    display: none;
+  }
+  .avatar input {
+    width: 100%;
     height: 100%;
+    opacity: 0; /* Hide the button */
+    cursor: pointer;
+  }
+  .avatar-icon {
+    color: #fff;
+    font-size: 1.5em;
+    position: absolute;
+    margin-top: 20px;
+    opacity: 1;
+    display:none;
+
+  }
+  #course-name{
+      font-size: 1rem;
+      font-weight: bold;
+  }
+  #course-description{
+      visibility: visible;
+    font-size: 0.8rem;
+  }
+  #Coure-name-input{
+      margin-right: -40px;
+      position: relative;
+      margin-top: -30px;
+      display: none;
+  }
+  #save-name{
+    margin-top: -30px;
+    display: none;
+  }
+  #del-input{
+    margin-top: -30px;
+    display: none;
+  }
+  #Coure-description-input{
+    margin-right: -40px;
+    position: relative;
+    margin-top: -30px;
+    display: none;
+  }
+  #save-description{
+    margin-top: -30px;
+    display: none;
+  }
+  #del-description{
+    margin-top: -30px;
+    display: none;
+  }
+  /******/
+  
+element.style {
+}
+#tl-unit-container-namespace {
+    background-color: transparent;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.well {
+    padding: 12px;
+    margin-bottom: 10px;
+}
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+user agent stylesheet
+div {
+    display: block;
+}
+.tl-body {
+    background-image: none;
+    text-shadow: none!important;
 }

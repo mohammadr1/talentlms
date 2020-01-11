@@ -5,16 +5,16 @@ import { Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
-import Welcome from './components/Welcome';
+import CreateCourse from './components/CreateCourse';
 
 function App() {
   return (
    <div>
       <Header />
       <Route path="/" component={Home} exact={true}/>
-      <Route path="/about" component={About} />
+      <Route path="/About" component={About} />
       <Route path="/contact" component={Contact} />
-      <Route path="/welcome" component={Welcome} />
+      <Route path="/CreateCourse" component={CreateCourse} />
     </div>
   );
 }
