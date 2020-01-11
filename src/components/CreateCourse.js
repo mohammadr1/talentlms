@@ -33,10 +33,13 @@ class CreateCourse extends React.Component{
     document.getElementById("del-input").style.display="none";
     document.getElementById("save-name").style.display="none";
   }
-  // saveName(){
-  //   console.log(this.state.courseName);
-  //   document.getElementById("course-name")=this.state.courseName; 
-  // }
+   saveName(){
+    document.getElementById("course-name").innerHTML=this.state.courseName; 
+    document.getElementById("course-name").style.visibility="visible";
+    document.getElementById("Coure-name-input").style.display="none";
+    document.getElementById("del-input").style.display="none";
+    document.getElementById("save-name").style.display="none";
+  }
   saveDescription(){
 
   }
@@ -75,10 +78,10 @@ class CreateCourse extends React.Component{
               <div className="col-md-9 pt-2">
                 <div className="row">
                   <div className="col-md-10">
-                    <h1 id="course-name" onClick={this.handleCourseName.bind(this)}>{this.state.courseName}</h1>
+                    <h1 id="course-name" onClick={this.handleCourseName.bind(this)}>نام دوره‌ی آموزشی خود را مشخص نمایید</h1>
                     <div className="col-md-12 row justify-content-end d-flex" id="Coure-name-div">
                       <button id="del-input" onClick={this.handleDeletInput.bind(this)}><i class="fas fa-times"></i></button>
-                      <button id="save-name" onClick={this.saveName}><i class="fas fa-check"></i></button>
+                      <button id="save-name" onClick={this.saveName.bind(this)}><i class="fas fa-check"></i></button>
                       <input id="Coure-name-input" type="text" className="form-control form-control-sm col-md-9 text-left" value={this.state.courseName} onChange={this.handleInputChange.bind(this)}/> 
                     </div> 
                     <p  id="course-description" onClick={this.handleCourseDescription.bind(this)}>  در مورد دوره‌ی آموزشی که قصد برگزاری آن را دارید، به طور خلاصه توضیح دهید </p>
