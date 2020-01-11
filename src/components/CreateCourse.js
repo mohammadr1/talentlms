@@ -41,7 +41,11 @@ class CreateCourse extends React.Component{
     document.getElementById("save-name").style.display="none";
   }
   saveDescription(){
-
+    document.getElementById("course-description").innerHTML=this.state.courseDescription;
+    document.getElementById("course-description").style.visibility="visible";
+    document.getElementById("Coure-description-input").style.display="none";
+    document.getElementById("del-description").style.display="none";
+    document.getElementById("save-description").style.display="none";
   }
   handleCourseDescription() {
     document.getElementById("course-description").style.visibility="hidden";
@@ -58,6 +62,11 @@ class CreateCourse extends React.Component{
   handleInputChange(event){
     this.setState({
       courseName:event.target.value
+     }) 
+  }
+  handleDescription(event){
+    this.setState({
+      courseDescription:event.target.value
      }) 
   }
   render(){
@@ -87,8 +96,8 @@ class CreateCourse extends React.Component{
                     <p  id="course-description" onClick={this.handleCourseDescription.bind(this)}>  در مورد دوره‌ی آموزشی که قصد برگزاری آن را دارید، به طور خلاصه توضیح دهید </p>
                     <div className="col-md-12 row justify-content-end d-flex" id="Coure-name-div">
                       <button id="del-description" onClick={this.deleteDescription.bind(this)}><i class="fas fa-times"></i></button>
-                      <button id="save-description" onClick={this.Description}><i class="fas fa-check"></i></button>
-                      <textarea id="Coure-description-input"  className="form-control form-control-sm col-md-9 text-left">{this.state.courseDescription}</textarea> 
+                      <button id="save-description" onClick={this.saveDescription.bind(this)}><i class="fas fa-check"></i></button>
+                      <textarea id="Coure-description-input"  className="form-control form-control-sm col-md-9 text-left"value={this.state.courseDescription} onChange={this.handleDescription.bind(this)}></textarea> 
                     </div>
                     <div className="btn-group">
                       <button type="button" className="btn btn-sm btn-primary dropdown-toggle rounded ml-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
