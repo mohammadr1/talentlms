@@ -33,12 +33,13 @@ class CreateCourse extends React.Component{
     document.getElementById("del-input").style.display="none";
     document.getElementById("save-name").style.display="none";
   }
-  /*saveName(){
-    document.getElementById("course-name")=this.state.courseName; 
-  }
+  // saveName(){
+  //   console.log(this.state.courseName);
+  //   document.getElementById("course-name")=this.state.courseName; 
+  // }
   saveDescription(){
 
-  }*/
+  }
   handleCourseDescription() {
     document.getElementById("course-description").style.visibility="hidden";
     document.getElementById("Coure-description-input").style.display="block";
@@ -74,7 +75,7 @@ class CreateCourse extends React.Component{
               <div className="col-md-9 pt-2">
                 <div className="row">
                   <div className="col-md-10">
-                    <h1 id="course-name" onClick={this.handleCourseName.bind(this)}>نام دوره‌ی آموزشی خود را مشخص نمایید</h1>
+                    <h1 id="course-name" onClick={this.handleCourseName.bind(this)}>{this.state.courseName}</h1>
                     <div className="col-md-12 row justify-content-end d-flex" id="Coure-name-div">
                       <button id="del-input" onClick={this.handleDeletInput.bind(this)}><i class="fas fa-times"></i></button>
                       <button id="save-name" onClick={this.saveName}><i class="fas fa-check"></i></button>
@@ -109,8 +110,7 @@ class CreateCourse extends React.Component{
                         <div class="dropdown-divider"></div>
                         <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
                       </div>
-                    </div>
-                    
+                    </div>  
                   </div>
                   <div className="col-md-2">
                     <img src="./images/logo-pic.png" className="upload-course-pic" onMouseLeave={this.handleLeave.bind(this)} onMouseOver={this.handleChange.bind(this)}/>
@@ -125,7 +125,6 @@ class CreateCourse extends React.Component{
                   </div> 
                 </div>
               </div>
-              
             </div>
           </div>
         </div>
