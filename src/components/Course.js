@@ -15,14 +15,14 @@ class Contact extends Component{
         checked : false
       },
       {
-        id:1,
+        id:2,
         title:"node",
         category:"gsdfgds",
         lastupdate:"12/5/1360",
         checked : false
       },
       {
-        id:1,
+        id:3,
         title:"javascript",
         category:"gsdfgds",
         lastupdate:"12/5/1360",
@@ -31,26 +31,56 @@ class Contact extends Component{
     ]
     }
   }
-  _checkAll(value){
+
+
+  _checkItem(value){
     console.log(value)
     let myData=[];
-    this.state.data.forEach(element => {
-      console.log(element);
+    this.state.data.forEach(Element =>{
+      console.log(Element);
       myData.push(
         {
-          id:element.id,
-          title:element.title,
-          category:element.category,
-          lastupdate:element.lastupdate,
-          checked : value
+          id: Element.id,
+          title: Element.title,
+          category: Element.category,
+          lastupdate: Element.lastupdate,
+          checked: value.id
         }
       )
-    });
-    console.log(myData)
+
+      
+    })
+    console.log(myData);
     this.setState({
       data:myData
     })
   }
+
+
+  _checkAll(value){
+    console.log(value)
+    let myData=[];
+    this.state.data.forEach(Element =>{
+      console.log(Element);
+      myData.push(
+        {
+          id: Element.id,
+          title: Element.title,
+          category: Element.category,
+          lastupdate: Element.lastupdate,
+          checked: value
+        }
+      )
+      
+    })
+    console.log(myData);
+    this.setState({
+      data:myData
+    })
+
+    
+  }
+
   render(){
     return (
         <div style={{overflowX:"hidden"}}>
@@ -68,10 +98,11 @@ class Contact extends Component{
                         </div>
                         <div className="viewCourseCatalog">
                           <Link to="/">مشاهده کاتالوگ دوره</Link>
-                          <i class="fa fa-reply" aria-hidden="true"></i>
+                          <i className="fa fa-reply" aria-hidden="true"></i>
                           <Link to="/"></Link>
                         </div>
                         <table>
+                        <thead >
                           <tr>
                             <th className="w-130px">OPTIONS</th>
                             <th className="w-100px">LAST UPDATE ON</th>
@@ -85,26 +116,32 @@ class Contact extends Component{
                             }
                             }></input></th>
                           </tr>
+                          </thead>
+                          <tbody>
                           {this.state.data.map((item,index) =>(
-                            <tr>
+                            <tr key={index}>
                             <td>
-                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                            <Link to="/course"><i class="fa fa-reply noshow" aria-hidden="true"></i></Link>
-                            <Link to="/course"><i class="fa fa-times noshow" aria-hidden="true"></i></Link>
-                            <Link to="/course"><i class="fa fa-magnet noshow" aria-hidden="true"></i></Link>
-                            <Link to="/course"><i class="fa fa-edit noshow" aria-hidden="true"></i></Link>
-                            <Link to="/course"><i class="fa fa-signal noshow" aria-hidden="true"></i></Link>
+                            <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
+                            <Link to="/course"><i className="fa fa-reply noshow" aria-hidden="true"></i></Link>
+                            <Link to="/course"><i className="fa fa-times noshow" aria-hidden="true"></i></Link>
+                            <Link to="/course"><i className="fa fa-magnet noshow" aria-hidden="true"></i></Link>
+                            <Link to="/course"><i className="fa fa-edit noshow" aria-hidden="true"></i></Link>
+                            <Link to="/course"><i className="fa fa-signal noshow" aria-hidden="true"></i></Link>
 
                             </td>
-                            <td>07/01/2020</td>
-                            <td>نمونه</td>
+                            <td>{item.lastupdate}</td>
+                            <td>{item.category}</td>
                             <td>{
                               item.title
                               }</td> 
-                            <td><input type="checkbox" checked={item.checked} ></input></td> 
+                            <td><input type="checkbox" checked={item.checked} onChange={
+                              (text)=>{
+                                this._checkItem(text.target.checked)
+                              }
+                            } ></input></td> 
                           </tr>
                           ))}
-                          
+                          </tbody>
 
                         </table>
 
@@ -118,8 +155,8 @@ class Contact extends Component{
                           <div id="courses-grid_infoLeft">
                             <input type="search" placeholder="جستجو" className="form-control"/>
                             <div className="ico">
-                              <Link to="/course"><i class="fa fa-filter" aria-hidden="true"></i></Link>
-                              <Link to="/course"><i class="fa fa-download" aria-hidden="true"></i></Link>
+                              <Link to="/course"><i className="fa fa-filter" aria-hidden="true"></i></Link>
+                              <Link to="/course"><i className="fa fa-download" aria-hidden="true"></i></Link>
                             </div>
                           <div>
                             
