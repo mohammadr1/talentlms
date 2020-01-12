@@ -107,3 +107,152 @@ body{
     display: none;
   }
   
+
+  /*            Start Style Page Course                           */
+
+
+
+  .btn-group{
+    padding: 10px;
+  }
+.viewCourseCatalog{
+  float: left;
+}
+.viewCourseCatalog a{
+  display: inline-block;
+  padding-right: 10px;
+  line-height: 40px;
+  margin: 20px 10px;
+
+  /* text-decoration: none; */
+}
+
+table{
+  width: 100%;
+  height: 45px;
+  line-height: 40px;
+  color: #fff;
+  float: inline-end;
+}
+table th{
+  background: #007bff ;
+  text-align: center;
+  width: 190px;
+}
+
+
+th input[type=checkbox]{ 
+  text-align: right;
+/* opacity: 0; */
+/* vertical-align: text-top; */
+}
+input[type=checkbox]{
+  margin: 5px 10px;
+  /* display: none; */
+  /* opacity: 0; */
+}
+
+
+table tr td{
+  text-align: center;
+  color: black;
+}
+
+.noshow{
+  /* display: none; */
+   margin:0 10px;
+  border-radius: 50px;
+  /* background: #c1c1c1; */
+  color: black;
+} 
+tr:hover .noshow, tr:hover input[type=checkbox] {
+  /* display: inline-block;
+  opacity: 1; */
+
+}
+td:hover .fa-ellipsis-h{
+  /* display: none; */
+
+}
+.w-150px{
+  width: 150px;
+}
+.w-140px{
+  width: 140px;
+}
+.w-130px{
+  width: 130px;
+}
+.w-120px{
+  width: 120px;
+}
+.w-90px{
+  width: 90px;
+}
+.w-25px{
+  width: 25px;
+}
+.w-10px{
+  width: 10px;
+}
+.w-1px{
+  width: 1px;
+}
+tr:nth-child(odd){background: #e9e8e8;}
+
+.formRight{
+  width: 50%;
+  height: auto;
+  /* background: red; */
+  float: right;
+}
+.formLeft{
+  width: 50%;
+  height: auto;
+  /* background: blue; */
+  float: left;
+}
+
+div#courses-grid_info{
+  background: rgba(99,109,116,0.5);
+    border-radius: 100px;
+    box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0,0,0,0.25);
+    color: #fff;
+    width: auto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    min-width: 40px;
+    padding: 4px 10px 3px;
+    position: absolute;
+    right: 0;
+    margin: 10px 10px;
+  }
+
+
+  div#courses-grid_infoLeft input{
+    width: 50%;
+    float: left;
+    border-radius: 4px;
+    padding: 20px 10px;
+    margin: 10px;
+    direction: rtl;
+  }
+  div#courses-grid_infoLeft i{
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+.ico{
+  float: left;
+  padding: 20px;
+  /* margin: 5px; */
+}
+.ico > a{
+text-decoration: none;
+  margin: 5px;
+  font-size: 16px;
+}
+
+
+  /*            End Style Page Course                           */
