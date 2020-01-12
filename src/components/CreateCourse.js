@@ -1,5 +1,6 @@
 import React,{ Component } from 'react';
 import { Link } from 'react-router-dom';
+import { directive } from '../../node_modules/@babel/types';
 
 
 class CreateCourse extends React.Component{
@@ -8,7 +9,10 @@ class CreateCourse extends React.Component{
     this.state={
       formShow: false,
       courseName:"نام دوره‌ی آموزشی خود را مشخص نمایید",
-      courseDescription:" در مورد دوره‌ی آموزشی که قصد برگزاری آن را دارید، به طور خلاصه توضیح دهید"
+      courseDescription:" در مورد دوره‌ی آموزشی که قصد برگزاری آن را دارید، به طور خلاصه توضیح دهید",
+      courseCode:"  c752 :مثال",
+      coursePrice:"ریال",
+      courseTime:" تعداد روز "
     }
   }
   handleChange() {
@@ -59,6 +63,18 @@ class CreateCourse extends React.Component{
     document.getElementById("del-description").style.display="none";
     document.getElementById("save-description").style.display="none";
   }
+  handleCourseCategory(){
+    document.getElementById("course-category").style.visibility="hidden";
+    document.getElementById("Course-category-select").style.display="block";
+    document.getElementById("del-category").style.display="block";
+    document.getElementById("save-category").style.display="block";
+  }
+  handleDeletCategory(){
+    document.getElementById("course-category").style.visibility="visible";
+    document.getElementById("Course-category-select").style.display="none";
+    document.getElementById("del-category").style.display="none";
+    document.getElementById("save-category").style.display="none";
+  }
   handleInputChange(event){
     this.setState({
       courseName:event.target.value
@@ -69,6 +85,7 @@ class CreateCourse extends React.Component{
       courseDescription:event.target.value
      }) 
   }
+
   render(){
     return (
       <section className="container-fliud">
@@ -87,53 +104,88 @@ class CreateCourse extends React.Component{
               <div className="col-md-9 pt-2">
                 <div className="row">
                   <div className="col-md-10">
-                    <h1 id="course-name" onClick={this.handleCourseName.bind(this)}>نام دوره‌ی آموزشی خود را مشخص نمایید</h1>
-                    <div className="col-md-12 row justify-content-end d-flex" id="Coure-name-div">
-                      <button id="del-input" onClick={this.handleDeletInput.bind(this)}><i class="fas fa-times"></i></button>
-                      <button id="save-name" onClick={this.saveName.bind(this)}><i class="fas fa-check"></i></button>
-                      <input id="Coure-name-input" type="text" className="form-control form-control-sm col-md-9 text-left" value={this.state.courseName} onChange={this.handleInputChange.bind(this)}/> 
-                    </div> 
-                    <p  id="course-description" onClick={this.handleCourseDescription.bind(this)}>  در مورد دوره‌ی آموزشی که قصد برگزاری آن را دارید، به طور خلاصه توضیح دهید </p>
-                    <div className="col-md-12 row justify-content-end d-flex" id="Coure-name-div">
-                      <button id="del-description" onClick={this.deleteDescription.bind(this)}><i class="fas fa-times"></i></button>
-                      <button id="save-description" onClick={this.saveDescription.bind(this)}><i class="fas fa-check"></i></button>
-                      <textarea id="Coure-description-input"  className="form-control form-control-sm col-md-9 text-left"value={this.state.courseDescription} onChange={this.handleDescription.bind(this)}></textarea> 
-                    </div>
-                    <div className="btn-group">
-                      <button type="button" className="btn btn-sm btn-primary dropdown-toggle rounded ml-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i className="fas fa-ellipsis-h"></i>
-                      </button>
-                      <div class="dropdown-menu">
-                        <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                        <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                        <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                      </div>
-                    </div>
-                    <Link to="/" className="btn btn-primary btn-sm ml-2 rounded" role="button" aria-pressed="true">مشاهده از دیدگاه کارآموز</Link>
-                    <Link  to="/" className="btn btn-primary btn-sm ml-2 rounded" role="button" aria-pressed="true">ویرایش اطلاعات دوره</Link>
-                    <div className="btn-group">
-                      <button type="button" className="btn btn-sm btn-primary dropdown-toggle rounded ml-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        افزودن
-                      </button>
-                      <div class="dropdown-menu">
-                        <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                        <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                        <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                        <div class="dropdown-divider"></div>
-                        <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                      </div>
-                    </div>  
+                            <h1 id="course-name" onClick={this.handleCourseName.bind(this)} className="mb-3"><i className="far fa-edit ml-3"></i>نام دوره‌ی آموزشی خود را مشخص نمایید</h1>
+                            <div className="col-md-12 row justify-content-end d-flex" id="Coure-name-div">
+                                  <button id="del-input" onClick={this.handleDeletInput.bind(this)} className="mb-3"><i className="fas fa-times"></i></button>
+                                  <button id="save-name" onClick={this.saveName.bind(this)} className="mb-3"><i className="fas fa-check"></i></button>
+                                  <input id="Coure-name-input" type="text" className="form-control form-control-sm col-md-9 text-left mb-3" value={this.state.courseName} onChange={this.handleInputChange.bind(this)}/> 
+                            </div> 
+                            <p  id="course-category" onClick={this.handleCourseCategory.bind(this)}> <i className="far fa-edit ml-3 " ></i> دسته‌بندی دوره خود را انتخاب کنید </p>
+                            <div className="col-md-12 row justify-content-end d-flex " id="Course-category-div">
+                                  <button id="del-category" onClick={this.handleDeletCategory.bind(this)} className="mb-3"><i className="fas fa-times"></i></button>
+                                  <button id="save-category" onClick={this.saveCategory} className="mb-3"><i className="fas fa-check"></i></button>
+                                  <select class="custom-select  form-control-sm col-md-9 mb-3"  id="Course-category-select">
+                                    <option selected >دسته بندی مناسب را انتخاب کنید</option>
+                                    <option value="One"></option>
+                                    <option value="Two"></option>
+                                    <option value="Three"></option>
+                                  </select> 
+                            </div>
+                            <p  id="course-description" onClick={this.handleCourseDescription.bind(this)}> <i className="far fa-edit ml-3 " ></i> در مورد دوره‌ی آموزشی که قصد برگزاری آن را دارید، به طور خلاصه توضیح دهید </p>
+                            <div className="col-md-12 row justify-content-end d-flex" id="Coure-description-div">
+                                  <button id="del-description" onClick={this.deleteDescription.bind(this)}className="mb-3"><i className="fas fa-times"></i></button>
+                                  <button id="save-description" onClick={this.saveDescription.bind(this)} className="mb-3"><i className="fas fa-check"></i></button>
+                                  <textarea id="Coure-description-input"  className="form-control form-control-sm col-md-9 text-left mb-3"value={this.state.courseDescription} onChange={this.handleDescription.bind(this)}></textarea> 
+                            </div>
+                            <div className="btn-group">
+                                  <button type="button" className="btn btn-sm btn-primary dropdown-toggle rounded ml-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i className="fas fa-ellipsis-h"></i>
+                                  </button>
+                                  <div className="dropdown-menu">
+                                    <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
+                                    <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
+                                    <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
+                                  </div>
+                            </div>
+                            <Link to="/" className="btn btn-primary btn-sm ml-2 rounded" role="button" aria-pressed="true">مشاهده از دیدگاه کارآموز</Link>
+                            <Link  to="/" className="btn btn-primary btn-sm ml-2 rounded" role="button" aria-pressed="true">ویرایش اطلاعات دوره</Link>
+                            <div className="btn-group">
+                              <button type="button" className="btn btn-sm btn-primary dropdown-toggle rounded ml-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                افزودن
+                              </button>
+                              <div class="dropdown-menu">
+                                <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
+                                <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
+                                <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
+                                <div className="dropdown-divider"></div>
+                                <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
+                              </div>
+                            </div>  
+                            <hr/>
+                            
+                            <div className="justify-content-end row">
+                                <input type="text" className="col-md-2 form-control form-control-sm text-left ml-4" value={this.state.courseCode}/>
+                                <h1 id="course-code" className="mb-3 margin-style mt-1 mr-1">کد دوره <i class="fas fa-tags mr-3"></i></h1>
+                            </div>
+                            <div className="justify-content-end row">
+                                <input type="text" className="col-md-2 form-control form-control-sm text-left ml-3" value={this.state.coursePrice}/>
+                                <h1 id="course-price" className="mb-3 margin-style mt-1">هزینه دوره <i class="fas fa-shopping-cart mr-3"></i></h1>
+                            </div>
+                            <div className="justify-content-end row">
+                                <input type="text" className="col-md-2 form-control form-control-sm text-left ml-4" value={this.state.courseTime}/>
+                                <h1 id="course-time" className="mb-3 margin-style mt-1">طول دوره <i class="fas fa-clock mr-3"></i></h1>
+                            </div>
+                            <div className="justify-content-end row">
+                                <select className="form-control form-control-sm col-md-2 text-left ml-3" id="exampleFormControlSelect1 ">
+                                  <option>{this.state.level}</option>
+                                  <option>{this.state.level}</option>
+                                  <option>{this.state.level}</option>
+                                </select>
+                                <h1 id="course-code" className="mb-3 margin-style mt-1 mr-2">سطح دوره <i class="fas fa-tachometer-alt mr-2"></i></h1>
+                            </div>
+                            
                   </div>
                   <div className="col-md-2">
-                    <img src="./images/logo-pic.png" className="upload-course-pic" onMouseLeave={this.handleLeave.bind(this)} onMouseOver={this.handleChange.bind(this)}/>
-                    <form>
-                      <div className="avatar" id="upload-avatar">
-                      <div  className="col-md-12 d-flex justify-content-center" >
-                        <i id="avatar-icon" className="fas fa-camera avatar-icon" ></i>
-                        </div>
-                        <input type="file" name="avatar" />
-                      </div>
-                    </form>
+                            <h1 id="pic-upload">: انتخاب عکس</h1>
+                            <img src="./images/logo-pic.png" className="upload-course-pic" onMouseOver={this.handleChange.bind(this)}/>
+                            <form onMouseLeave={this.handleLeave.bind(this)}>
+                              <div className="avatar" id="upload-avatar">
+                              <div  className="col-md-12 d-flex justify-content-center" >
+                                <i id="avatar-icon" className="fas fa-camera avatar-icon" ></i>
+                                </div>
+                                <input type="file" name="avatar" />
+                              </div>
+                            </form>
                   </div> 
                 </div>
               </div>

@@ -74,6 +74,10 @@ body{
       font-size: 1rem;
       font-weight: bold;
   }
+  #pic-upload{
+    font-size: 1rem;
+    font-weight: bold;
+  }
   #course-description{
       visibility: visible;
     font-size: 0.8rem;
@@ -106,4 +110,22 @@ body{
     margin-top: -30px;
     display: none;
   }
-  
+  #Course-category-select{
+    margin-right: -40px;
+    position: relative;
+    margin-top: -30px;
+      display: none;
+     
+  }
+  #save-category{
+    margin-top: -30px;
+    display: none;
+  }
+  #del-category{
+    margin-top: -30px;
+    display: none;
+  }
+  .margin-style{
+    font-size: 1rem;
+    font-weight: bold;
+  }
