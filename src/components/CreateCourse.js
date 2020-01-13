@@ -13,9 +13,12 @@ class CreateCourse extends React.Component{
       courseCode:"  c752 :مثال",
       coursePrice:"ریال",
       courseTime:" تعداد روز ",
+      selectValue:"متوسط",
+
       level:[
         {
         title:"ساده"
+
       },
       {
         title:"متوسط"
@@ -24,6 +27,8 @@ class CreateCourse extends React.Component{
         title:"سخت"
       }
     ],
+
+
       menu:[
         {
         item:"ساخت دوره"
@@ -37,7 +42,7 @@ class CreateCourse extends React.Component{
       {
         item:"گزارش دوره‌ها"
       }
-    ]
+    ],
     }
   }
   handleChange() {
@@ -110,7 +115,10 @@ class CreateCourse extends React.Component{
       courseDescription:event.target.value
      }) 
   }
-  
+
+_select(value){
+console.log(value)
+}
   render(){
     return (
       <section className="container-fliud">
@@ -194,14 +202,9 @@ class CreateCourse extends React.Component{
                                 <h1 id="course-time" className="mb-3 margin-style mt-1">طول دوره <i class="fas fa-clock mr-3"></i></h1>
                             </div>
                             <div className="justify-content-end row">
-                            {this.state.level.map((item,index) =>(
-                                <select className="form-control form-control-sm col-md-2 text-left ml-3" id="exampleFormControlSelect1 "  onSelect={
-                                      (text)=>{this.select(text.target.select)}}>
-                                      <option>{item.title}</option>
-                                      <option>{item.title}</option>
-                                      <option>{item.title}</option>
-                                </select>
-                              ))}
+                            
+                                
+
                                 <h1 id="course-code" className="mb-3 margin-style mt-1 mr-2">سطح دوره <i class="fas fa-tachometer-alt mr-2"></i></h1>
                             </div>   
                             <div class="file-upload-wrapper">
