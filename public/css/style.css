@@ -126,6 +126,366 @@ body{
     display: none;
   }
   .margin-style{
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: bold;
   }
+  
+
+  /*            Start Style Page Course                           */
+
+
+
+  .btn-group{
+    padding: 10px;
+  }
+.viewCourseCatalog{
+  float: left;
+}
+.viewCourseCatalog a{
+  display: inline-block;
+  padding-right: 10px;
+  line-height: 40px;
+  margin: 20px 10px;
+
+  /* text-decoration: none; */
+}
+
+table{
+  width: 100%;
+  height: 45px;
+  line-height: 40px;
+  color: #fff;
+  float: inline-end;
+}
+table th{
+  background: #007bff ;
+  text-align: center;
+  width: 190px;
+}
+
+
+th input[type=checkbox]{ 
+  text-align: right;
+/* opacity: 0; */
+/* vertical-align: text-top; */
+}
+input[type=checkbox]{
+  margin: 5px 10px;
+  /* display: none; */
+  /* opacity: 0; */
+}
+
+
+table tr td{
+  text-align: center;
+  color: black;
+}
+
+.noshow{
+  /* display: none; */
+   margin:0 10px;
+  border-radius: 50px;
+  /* background: #c1c1c1; */
+  color: black;
+} 
+tr:hover .noshow, tr:hover input[type=checkbox] {
+  /* display: inline-block;
+  opacity: 1; */
+
+}
+td:hover .fa-ellipsis-h{
+  /* display: none; */
+
+}
+.w-150px{
+  width: 150px;
+}
+.w-140px{
+  width: 140px;
+}
+.w-130px{
+  width: 130px;
+}
+.w-120px{
+  width: 120px;
+}
+.w-90px{
+  width: 90px;
+}
+.w-25px{
+  width: 25px;
+}
+.w-10px{
+  width: 10px;
+}
+.w-1px{
+  width: 1px;
+}
+tr:nth-child(odd){background: #e9e8e8;}
+
+.formRight{
+  width: 50%;
+  height: auto;
+  /* background: red; */
+  float: right;
+}
+.formLeft{
+  width: 50%;
+  height: auto;
+  /* background: blue; */
+  float: left;
+}
+
+div#courses-grid_info{
+  background: rgba(99,109,116,0.5);
+    border-radius: 100px;
+    box-shadow: 0 1px 0 #ffffff, inset 0 1px 2px rgba(0,0,0,0.25);
+    color: #fff;
+    width: auto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    min-width: 40px;
+    padding: 4px 10px 3px;
+    position: absolute;
+    right: 0;
+    margin: 10px 10px;
+  }
+
+
+  div#courses-grid_infoLeft input{
+    width: 50%;
+    float: left;
+    border-radius: 4px;
+    padding: 20px 10px;
+    margin: 10px;
+    direction: rtl;
+  }
+  div#courses-grid_infoLeft i{
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+.ico{
+  float: left;
+  padding: 20px;
+  /* margin: 5px; */
+}
+.ico > a{
+text-decoration: none;
+  margin: 5px;
+  font-size: 16px;
+}
+
+
+  /*            End Style Page Course                           */
+
+
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
+
+.menu {
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff4f5;
+}
+.menu li a{
+    display:block;
+    height:em;
+    width:5em;
+    text-indent:-500em;
+    line-height:5em;
+    text-align:center;
+    color: #ff5c62;
+    background: #fff4f5;
+    position: relative;
+    border-bottom: 1px solid #ffe2e3;
+    transition: background 0.3s ease-in-out;
+}
+.menu li a:before {
+  font-family: FontAwesome;
+  speak: none;
+  text-indent: 0em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.4em;
+}
+.menu li a.search:before {
+  content: "\f002";
+}
+.menu li a.archive:before {
+  content: "\f187";
+}
+.menu li a.pencil:before {
+  content: "\f040";
+}
+.menu li a.contact:before {
+  content: "\f003";
+}
+.menu li a.about:before {
+  content: "\f007";
+}
+.menu li a.home:before {
+  content: "\f015";
+}
+.menu li a:hover{
+  background: #007bff;
+  color: #fff;
+}
+.menu li.current a {
+  background: #007bff;
+  color: #fff;
+}
+.menu li a.active {
+  background: #007bff;
+  color: #fff;
+}
+.menu li a.active:after{
+    position:absolute;
+    left:5em;
+    top:0;
+    content:"";
+    border:2.5em solid transparent;
+    border-left-color:#007bff;
+    border-width: 2.5em 1em
+}
+.menu li{
+    position:relative;
+}
+.menu li:after{
+    content: attr(title);
+    position:absolute;
+    left:5em;
+    top:0;
+    height:5em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-transform:uppercase;
+    background:#007bff;
+    padding:2em;
+    transition: all 0.3s ease-in-out;
+    visibility:hidden;
+    opacity:0;
+}
+.menu li:hover:after{
+    visibility:visible;
+    opacity:1;
+}
+@media screen and (max-height: 34em){
+  .menu li{
+    font-size:70%;
+  }
+}
+
+
+
+.file-upload {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  height: 200px;
+  margin-left: 100px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  text-align: center;
+  color: #ccc;
+}
+.file-upload-wrapper .card.card-body .file-upload-message {
+  position: relative;
+  top: 50px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.fa, .fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+.file-upload-wrapper .card.card-body .file-upload-message p {
+  margin: 5px 0 0;
+}
+.file-upload-wrapper .card.card-body .file-upload-message p.file-upload-error {
+  color: #f34141;
+  font-weight: 700;
+  display: none;
+}
+.file-upload .mask.rgba-stylish-slight {
+  opacity: 0;
+  -webkit-transition: all .15s linear;
+  -o-transition: all .15s linear;
+  transition: all .15s linear;
+}
+.view .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+.rgba-stylish-slight {
+  background-color: rgba(62,69,81,.1);
+}
+.file-upload-wrapper .card.card-body .file-upload-errors-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  background: rgba(243, 65, 65, .8);
+  text-align: left;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s linear .15s, opacity .15s linear;
+  -o-transition: visibility 0s linear .15s, opacity .15s linear;
+  transition: visibility 0s linear .15s, opacity .15s linear;
+}
+.file-upload-wrapper .card.card-body input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+.file-upload-wrapper .card.card-body .btn.btn-sm.btn-danger {
+  display: none;
+  position: absolute;
+  opacity: 0;
+  z-index: 7;
+  top: 10px;
+  right: 10px;
+  -webkit-transition: all .15s linear;
+  -o-transition: all .15s linear;
+  transition: all .15s linear;
+}
+.file-upload i {
+  font-size: 3rem;
+}

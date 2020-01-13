@@ -12,7 +12,32 @@ class CreateCourse extends React.Component{
       courseDescription:" در مورد دوره‌ی آموزشی که قصد برگزاری آن را دارید، به طور خلاصه توضیح دهید",
       courseCode:"  c752 :مثال",
       coursePrice:"ریال",
-      courseTime:" تعداد روز "
+      courseTime:" تعداد روز ",
+      level:[
+        {
+        title:"ساده"
+      },
+      {
+        title:"متوسط"
+      },
+      {
+        title:"سخت"
+      }
+    ],
+      menu:[
+        {
+        item:"ساخت دوره"
+      },
+      {
+        item:"ویرایش دوره"
+      },
+      {
+        item:"دوره‌های من"
+      },
+      {
+        item:"گزارش دوره‌ها"
+      }
+    ]
     }
   }
   handleChange() {
@@ -85,7 +110,7 @@ class CreateCourse extends React.Component{
       courseDescription:event.target.value
      }) 
   }
-
+  
   render(){
     return (
       <section className="container-fliud">
@@ -98,8 +123,11 @@ class CreateCourse extends React.Component{
                 </ol>
             </div>
             <div className="card-body row">
-              <div className="col-md-3 bg-dark">
-               
+              <div className="col-md-3">
+                  <ul className="menu">
+                  {this.state.menu.map((item,index) =>(
+                    <li title="home"><Link to="/" className="active">home</Link></li>))}
+                  </ul> 
               </div>
               <div className="col-md-9 pt-2">
                 <div className="row">
@@ -166,14 +194,37 @@ class CreateCourse extends React.Component{
                                 <h1 id="course-time" className="mb-3 margin-style mt-1">طول دوره <i class="fas fa-clock mr-3"></i></h1>
                             </div>
                             <div className="justify-content-end row">
-                                <select className="form-control form-control-sm col-md-2 text-left ml-3" id="exampleFormControlSelect1 ">
-                                  <option>{this.state.level}</option>
-                                  <option>{this.state.level}</option>
-                                  <option>{this.state.level}</option>
+                            {this.state.level.map((item,index) =>(
+                                <select className="form-control form-control-sm col-md-2 text-left ml-3" id="exampleFormControlSelect1 "  onSelect={
+                                      (text)=>{this.select(text.target.select)}}>
+                                      <option>{item.title}</option>
+                                      <option>{item.title}</option>
+                                      <option>{item.title}</option>
                                 </select>
+                              ))}
                                 <h1 id="course-code" className="mb-3 margin-style mt-1 mr-2">سطح دوره <i class="fas fa-tachometer-alt mr-2"></i></h1>
-                            </div>
-                            
+                            </div>   
+                            <div class="file-upload-wrapper">
+                              <div class="card card-body view file-upload">
+                                  <div class="card-text file-upload-message">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Drag and drop a file here or click</p>
+                                  </div>
+                                  <div class="mask rgba-stylish-slight"></div>
+                                  <div class="file-upload-errors-container">
+                                    <ul></ul>
+                                  </div>
+                                  <input type="file" id="input-file-now" class="file_upload"/><button type="button" class="btn btn-sm btn-danger">Remove<i class="far fa-trash-alt ml-1"></i></button>
+                                  <div class="file-upload-preview">
+                                    <span class="file-upload-render"></span>
+                                    <div class="file-upload-infos">
+                                        <div class="file-upload-infos-inner">
+                                          <p class="file-upload-filename"><span class="file-upload-filename-inner"></span></p>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>       
                   </div>
                   <div className="col-md-2">
                             <h1 id="pic-upload">: انتخاب عکس</h1>
