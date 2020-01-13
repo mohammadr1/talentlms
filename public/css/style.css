@@ -74,6 +74,10 @@ body{
       font-size: 1rem;
       font-weight: bold;
   }
+  #pic-upload{
+    font-size: 1rem;
+    font-weight: bold;
+  }
   #course-description{
       visibility: visible;
     font-size: 0.8rem;
@@ -105,6 +109,25 @@ body{
   #del-description{
     margin-top: -30px;
     display: none;
+  }
+  #Course-category-select{
+    margin-right: -40px;
+    position: relative;
+    margin-top: -30px;
+      display: none;
+     
+  }
+  #save-category{
+    margin-top: -30px;
+    display: none;
+  }
+  #del-category{
+    margin-top: -30px;
+    display: none;
+  }
+  .margin-style{
+    font-size: 0.8rem;
+    font-weight: bold;
   }
   
 
@@ -260,3 +283,213 @@ text-decoration: none;
 
 
   /*            End Style Page Course                           */
+
+
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
+
+.menu {
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff4f5;
+}
+.menu li a{
+    display:block;
+    height:em;
+    width:5em;
+    text-indent:-500em;
+    line-height:5em;
+    text-align:center;
+    color: #ff5c62;
+    background: #fff4f5;
+    position: relative;
+    border-bottom: 1px solid #ffe2e3;
+    transition: background 0.3s ease-in-out;
+}
+.menu li a:before {
+  font-family: FontAwesome;
+  speak: none;
+  text-indent: 0em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.4em;
+}
+.menu li a.search:before {
+  content: "\f002";
+}
+.menu li a.archive:before {
+  content: "\f187";
+}
+.menu li a.pencil:before {
+  content: "\f040";
+}
+.menu li a.contact:before {
+  content: "\f003";
+}
+.menu li a.about:before {
+  content: "\f007";
+}
+.menu li a.home:before {
+  content: "\f015";
+}
+.menu li a:hover{
+  background: #007bff;
+  color: #fff;
+}
+.menu li.current a {
+  background: #007bff;
+  color: #fff;
+}
+.menu li a.active {
+  background: #007bff;
+  color: #fff;
+}
+.menu li a.active:after{
+    position:absolute;
+    left:5em;
+    top:0;
+    content:"";
+    border:2.5em solid transparent;
+    border-left-color:#007bff;
+    border-width: 2.5em 1em
+}
+.menu li{
+    position:relative;
+}
+.menu li:after{
+    content: attr(title);
+    position:absolute;
+    left:5em;
+    top:0;
+    height:5em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-transform:uppercase;
+    background:#007bff;
+    padding:2em;
+    transition: all 0.3s ease-in-out;
+    visibility:hidden;
+    opacity:0;
+}
+.menu li:hover:after{
+    visibility:visible;
+    opacity:1;
+}
+@media screen and (max-height: 34em){
+  .menu li{
+    font-size:70%;
+  }
+}
+
+
+
+.file-upload {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  height: 200px;
+  margin-left: 100px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  text-align: center;
+  color: #ccc;
+}
+.file-upload-wrapper .card.card-body .file-upload-message {
+  position: relative;
+  top: 50px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.fa, .fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+.file-upload-wrapper .card.card-body .file-upload-message p {
+  margin: 5px 0 0;
+}
+.file-upload-wrapper .card.card-body .file-upload-message p.file-upload-error {
+  color: #f34141;
+  font-weight: 700;
+  display: none;
+}
+.file-upload .mask.rgba-stylish-slight {
+  opacity: 0;
+  -webkit-transition: all .15s linear;
+  -o-transition: all .15s linear;
+  transition: all .15s linear;
+}
+.view .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+.rgba-stylish-slight {
+  background-color: rgba(62,69,81,.1);
+}
+.file-upload-wrapper .card.card-body .file-upload-errors-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  background: rgba(243, 65, 65, .8);
+  text-align: left;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s linear .15s, opacity .15s linear;
+  -o-transition: visibility 0s linear .15s, opacity .15s linear;
+  transition: visibility 0s linear .15s, opacity .15s linear;
+}
+.file-upload-wrapper .card.card-body input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+.file-upload-wrapper .card.card-body .btn.btn-sm.btn-danger {
+  display: none;
+  position: absolute;
+  opacity: 0;
+  z-index: 7;
+  top: 10px;
+  right: 10px;
+  -webkit-transition: all .15s linear;
+  -o-transition: all .15s linear;
+  transition: all .15s linear;
+}
+.file-upload i {
+  font-size: 3rem;
+}
