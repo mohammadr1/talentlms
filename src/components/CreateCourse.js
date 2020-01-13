@@ -121,7 +121,7 @@ console.log(value)
 }
   render(){
     return (
-      <section className="container-fliud">
+      <section className="container-fliud" style={{overflowX:"hidden"}}>
         <div className="row">
           <div className="CreateCourse-main-card card">
             <div className="card-header bg-primary CreateCourse-main-card-header">
@@ -203,7 +203,12 @@ console.log(value)
                             </div>
                             <div className="justify-content-end row">
                             
-                                
+                            <select className="form-control form-control-sm col-md-2 text-left ml-3" id="exampleFormControlSelect1 "  onChange={
+                                      (text)=>{this._select(text.target.value)}}>
+                                         {this.state.level.map((item,index) =>(
+                                      <option key={index}>{item.title}</option>
+                                         ))}
+                                </select>
 
                                 <h1 id="course-code" className="mb-3 margin-style mt-1 mr-2">سطح دوره <i class="fas fa-tachometer-alt mr-2"></i></h1>
                             </div>   
