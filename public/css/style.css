@@ -143,13 +143,13 @@ table th{
 
 th input[type=checkbox]{ 
   text-align: right;
-opacity: 0;
+/* opacity: 0; */
 /* vertical-align: text-top; */
 }
 input[type=checkbox]{
   margin: 5px 10px;
   /* display: none; */
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 
@@ -159,7 +159,7 @@ table tr td{
 }
 
 .noshow{
-  display: none;
+  display: none;  
   opacity: 0;
   text-align: center;
   margin:0 10px;
@@ -200,7 +200,7 @@ tr:hover .fa-ellipsis-h{
 .w-1px{
   width: 1px;
 }
-tr:nth-child(odd){background: #e9e8e8;}
+tr:nth-child(even){background: #e9e8e8;}
 
 .formRight{
   width: 50%;
@@ -214,7 +214,9 @@ tr:nth-child(odd){background: #e9e8e8;}
   /* background: blue; */
   float: left;
 }
-
+i{
+  color: #e9e8e8;
+}
 div#courses-grid_info{
   background: rgba(99,109,116,0.5);
     border-radius: 100px;
@@ -228,7 +230,7 @@ div#courses-grid_info{
     padding: 4px 10px 3px;
     position: absolute;
     right: 0;
-    margin: 10px 10px;
+    margin: 20px 10px;
   }
 
 
