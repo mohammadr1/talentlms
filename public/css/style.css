@@ -166,13 +166,13 @@ table th{
 
 th input[type=checkbox]{ 
   text-align: right;
-/* opacity: 0; */
+opacity: 0;
 /* vertical-align: text-top; */
 }
 input[type=checkbox]{
   margin: 5px 10px;
   /* display: none; */
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 
@@ -182,20 +182,22 @@ table tr td{
 }
 
 .noshow{
-  /* display: none; */
-   margin:0 10px;
+  display: none;
+  opacity: 0;
+  text-align: center;
+  margin:0 10px;
   border-radius: 50px;
   /* background: #c1c1c1; */
   color: black;
 } 
 tr:hover .noshow, tr:hover input[type=checkbox] {
-  /* display: inline-block;
-  opacity: 1; */
+  display: inline-block;
+  opacity: 1;
 
 }
-td:hover .fa-ellipsis-h{
-  /* display: none; */
-
+tr:hover .fa-ellipsis-h{
+  display: none;
+  /* text-align: center; */
 }
 .w-150px{
   width: 150px;
