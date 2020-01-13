@@ -309,7 +309,7 @@ text-decoration: none;
 }
 .menu li a:before {
   font-family: FontAwesome;
-  speak: none;
+  speak-as: none;
   text-indent: 0em;
   position: absolute;
   top: 0;
