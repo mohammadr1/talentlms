@@ -493,3 +493,20 @@ text-decoration: none;
 .file-upload i {
   font-size: 3rem;
 }
+
+
+  /*               Start Pages Userinfo           */
+
+
+  .UserInfo{
+    width: 100%;
+    height: auto;
+    margin: 30px 0 ;
+  }
+  .tab-content>.active {
+    display: block;
+    padding: 10px;
+}
+
+
+  /*                End Pages Userinfo           */
