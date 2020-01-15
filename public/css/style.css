@@ -82,7 +82,22 @@ body{
     font-size: 0.8rem;
     font-weight: bold;
   }
-  
+  .vertical-menu li {
+    list-style: none;
+    border: none;
+    border-radius: 10px;
+
+  }
+  .vertical-menu li:hover{
+    background-color: #007bff;
+  }
+ 
+  .vertical-menu a{
+    color: #000000;
+  }
+  .vertical-menu a:hover{
+    text-decoration: none;
+  }
 
   /*            Start Style Page Course                           */
 

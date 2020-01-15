@@ -12,8 +12,6 @@ class CreateCourse extends React.Component{
       categoryChangeStatus:false,
       picMouseOver:false,
 
-
-     
       courseName:"نام دوره‌ی آموزشی خود را مشخص نمایید", 
       courseDescription:" در مورد دوره‌ی آموزشی که قصد برگزاری آن را دارید، به طور خلاصه توضیح دهید",
       courseCode:"",
@@ -58,21 +56,37 @@ class CreateCourse extends React.Component{
       ], 
       menu:[
         {
-          item:"ساخت دوره"
+          title:"ویرایش دوره"
         },
         {
-          item:"ویرایش دوره"
+          title:"دوره‌های من"
         },
         {
-          item:"دوره‌های من"
-        },
-        {
-          item:"گزارش دوره‌ها"
+          title:"گزارش دوره‌ها"
         }
       ],
     }
   }
-
+//   _Save() {
+//     const data = {
+//         name: this.state.courseName,
+//         category: this.state.selectedCategory,
+//         description: this.state.courseDescription,
+//         code: this.state.courseCode,
+//         price: this.state.coursePrice,
+//         title: this.state.courseTime,
+//         left: this.state.selectValue
+//     };
+//     console.log( data );
+//     axios.post( "/", data )
+//         .then( res => {
+//             console.log( res );
+//             this.setState( { redirectStatus: true } );
+//         } )
+//         .catch( err => {
+//             console.log( err );
+//         } );
+// }
 _select(value){
 console.log(value)
 }
@@ -91,16 +105,19 @@ console.log(value)
             <div className="card-body row">
             {/*vertical menu ****************************/}  
               <div className="col-md-3">
-                  <ul >
-                  <li title="home"><Link to="/" className="active home current">home</Link></li>
+                  <ul className="vertical-menu">
+                  <li className="row align-items-center justify-content-end p-4 mb-2 shadow-sm">
+                    <Link to="">ساخت دوره</Link></li>
                   {this.state.menu.map((item,index) =>(
-                    <li title="home"><Link to="/" className="home">home</Link></li>))}
+                    <li className="row align-items-center justify-content-end p-4 mb-2 shadow-sm"
+                     key={index}><Link to="/">{item.title}</Link></li>))}
                   </ul> 
               </div>
             {/*course create info ****************************/} 
               <div className="col-md-9 pt-2">
                 <div className="row">
                   <div className="col-md-10">
+                    <form action="/action_page.php">
                   {/* title ChangeStatus ****************************/}
                             {
                               this.state.titleChangeStatus==false &&
@@ -222,7 +239,13 @@ console.log(value)
                                     ))}
                                 </select>
                                 <label for="courseLevel" id="course-level" className="col-md-3 mb-3 margin-style mt-1 ">سطح دوره <i class="fas fa-tachometer-alt mr-3"></i></label>
-                            </div>         
+                            </div>
+                            <hr/>
+                  {/* submit button ****************************/} 
+                            <button class="form btn btn-sm btn-primary " type="submit" 
+                            // onClick={()=>{this._save}}
+                            >ثبت اطلاعات</button>  
+                        </form>      
                   </div>
                   <div className="col-md-2">
                   {/* pic upload ****************************/}
