@@ -508,5 +508,79 @@ text-decoration: none;
     padding: 10px;
 }
 
+.idUser{
+  display: inline-block;
+  float: right;
+  margin: 10px;
+
+}
+.messages{
+  margin: 10px 0;
+  padding: 10px;
+}
+.messages .badge{
+  margin-right: 10px;
+  padding: 7px;
+}
+.userRight{
+  width: 50%;
+  float: right;
+}
+.userLeft {
+  width: 50%;
+  float: left;
+}
+
+.userLeft .btn{
+  float: left;
+  margin: 0 10px;
+}
+
+.user-report{
+  width: 100%;
+  height: auto;
+  margin: 10px;
+}
+
+.user-report{
+  width: 96%; 
+  height:auto;
+  background: rgb(239, 249, 255);
+  border: 2px solid rgb(224, 243, 255);
+  border-radius: 20px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 50px;
+  overflow: hidden;
+  justify-items: center;
+  
+}
+.user-report h2{
+margin: 5px;
+}
+.user-report .row .col{
+  min-width: 200px;
+  transition: all .7s;
+}
+.user-report .row a{
+  text-decoration: none;
+}
+.badges:hover , .coursesStarted:hover{
+  background: rgb(211, 221, 226);
+  transition: all .5s;
+  cursor: pointer;
+}
+.borderL{
+  border-left: 2px solid rgb(224, 243, 255);
+}
+
+.boxNemodar{
+  width: 97%;
+  height: 500px;
+  background: rgb(235, 193, 193);
+  margin: 20px;
+  text-align: center;
+  padding-top: 250px;
+}
 
   /*                End Pages Userinfo           */

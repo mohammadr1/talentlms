@@ -1,3 +1,5 @@
+//  Start Imports Routes
+
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -6,7 +8,10 @@ import Course from './components/Course';
 import Userinfo from './components/Userinfo';
 
 
+//  End Imports Routes
 
+
+//  Start Routes
 
 export default [
     { path : "/", component : Home, exact : true},
@@ -17,3 +22,5 @@ export default [
     { path : "/userinfo", component : Userinfo, exact : true},
     
     ];
+
+//  End Routes
