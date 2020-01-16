@@ -6,7 +6,7 @@ import { directive } from '../../node_modules/@babel/types';
 class CreateCourse extends React.Component{
   constructor(props){
     super(props)
-    this.state={
+    this.state= {
       titleChangeStatus:false,
       descriptionChangeStatus:false,
       categoryChangeStatus:false,
@@ -93,7 +93,7 @@ console.log(value)
 
   render(){
     return (
-      <section className="container-fliud" style={{overflowX:"hidden"}}>
+      <section className="container" style={{overflowX:"hidden"}}>
         <div className="row">
           <div className="CreateCourse-main-card card">
             <div className="card-header bg-primary CreateCourse-main-card-header">
@@ -117,7 +117,7 @@ console.log(value)
               <div className="col-md-9 pt-2">
                 <div className="row">
                   <div className="col-md-10">
-                    <form action="/action_page.php">
+                    <form action="/action_page.php" >
                   {/* title ChangeStatus ****************************/}
                             {
                               this.state.titleChangeStatus==false &&
@@ -241,6 +241,8 @@ console.log(value)
                                 <label for="courseLevel" id="course-level" className="col-md-3 mb-3 margin-style mt-1 ">سطح دوره <i class="fas fa-tachometer-alt mr-3"></i></label>
                             </div>
                             <hr/>
+                  {/* upload file ****************************/} 
+                            
                   {/* submit button ****************************/} 
                             <button class="form btn btn-sm btn-primary " type="submit" 
                             // onClick={()=>{this._save}}
@@ -269,10 +271,7 @@ console.log(value)
                                     <input type="file" name="avatar" />
                                   </div>
                                 </form>
-                              }
-                            
-                            
-                            
+                              }      
                   </div> 
                 </div>
               </div>

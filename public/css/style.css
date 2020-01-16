@@ -13,18 +13,27 @@
 body{
     font-family: IRANSansWeb;
 }
-.card{
-    display: inline-block;
-    margin: 100px;
+
+.home-card{
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 200px;
 }
-.card-img-top{
-    width: 290px;
-    height: 200px;
+.home-card h1{
+  font-size:1.2rem;
+  font-weight: bold;
 }
+.home-card p{
+  font-size:0.9rem;
+}
+
 /*********************************************Create course-page***********************************************/
 .CreateCourse-main-card{
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     width: 100%;
+    margin-top:100px;
 }
 .page-path{
     list-style: none;
