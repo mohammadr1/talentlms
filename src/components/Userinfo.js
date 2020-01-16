@@ -21,8 +21,6 @@ class Userinfo extends React.Component{
                     </ol>
                 </div>
 
-
-
                 <div className="UserInfo" dir="rtl">
                   <ul className="nav nav-tabs" id="myTab" role="tablist">
                     <li className="nav-item">
