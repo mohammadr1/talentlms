@@ -6,122 +6,94 @@ import { directive } from '../../node_modules/@babel/types';
 class CreateCourse extends React.Component{
   constructor(props){
     super(props)
-    this.state={
-      formShow: false,
-      courseName:"نام دوره‌ی آموزشی خود را مشخص نمایید",
+    this.state= {
+      titleChangeStatus:false,
+      descriptionChangeStatus:false,
+      categoryChangeStatus:false,
+      picMouseOver:false,
+
+      courseName:"نام دوره‌ی آموزشی خود را مشخص نمایید", 
       courseDescription:" در مورد دوره‌ی آموزشی که قصد برگزاری آن را دارید، به طور خلاصه توضیح دهید",
-      courseCode:"  c752 :مثال",
-      coursePrice:"ریال",
-      courseTime:" تعداد روز ",
-      selectValue:"متوسط",
+      courseCode:"",
+      coursePrice:"",
+      courseTime:"",
+      selectValue:"",
+      selectedCategory:"دسته‌بندی دوره خود را انتخاب کنید",
+
+
+      category:[
+        {
+          id:1,
+          text:"ICDl"
+        },
+        {
+          id:2,
+          text:"PHP"
+        },
+        {
+          id:3,
+          text:"Android"
+        },
+        {
+          id:4,
+          text:"HTML & CSS"
+        }
+      ],
 
       level:[
         {
-        title:"ساده"
-
-      },
-      {
-        title:"متوسط"
-      },
-      {
-        title:"سخت"
-      }
-    ],
-
-
+          id:1,
+          title:"ساده"
+        },
+        {
+          id:2,
+          title:"متوسط"
+        },
+        {
+          id:3,
+          title:"سخت"
+        }
+      ], 
       menu:[
         {
-        item:"ساخت دوره"
-      },
-      {
-        item:"ویرایش دوره"
-      },
-      {
-        item:"دوره‌های من"
-      },
-      {
-        item:"گزارش دوره‌ها"
-      }
-    ],
+          title:"ویرایش دوره"
+        },
+        {
+          title:"دوره‌های من"
+        },
+        {
+          title:"گزارش دوره‌ها"
+        }
+      ],
     }
   }
-  handleChange() {
-    document.getElementById("avatar-icon").style.display="block";
-    document.getElementById("upload-avatar").style.display="block";
-    
-  }
-  handleLeave() {
-    document.getElementById("avatar-icon").style.display="none";
-    document.getElementById("upload-avatar").style.display="none";
-
-  }
-  handleCourseName() {
-    document.getElementById("course-name").style.visibility="hidden";
-    document.getElementById("Coure-name-input").style.display="block";
-    document.getElementById("del-input").style.display="block";
-    document.getElementById("save-name").style.display="block";
-  }
-  handleDeletInput() {
-    document.getElementById("course-name").style.visibility="visible";
-    document.getElementById("Coure-name-input").style.display="none";
-    document.getElementById("del-input").style.display="none";
-    document.getElementById("save-name").style.display="none";
-  }
-   saveName(){
-    document.getElementById("course-name").innerHTML=this.state.courseName; 
-    document.getElementById("course-name").style.visibility="visible";
-    document.getElementById("Coure-name-input").style.display="none";
-    document.getElementById("del-input").style.display="none";
-    document.getElementById("save-name").style.display="none";
-  }
-  saveDescription(){
-    document.getElementById("course-description").innerHTML=this.state.courseDescription;
-    document.getElementById("course-description").style.visibility="visible";
-    document.getElementById("Coure-description-input").style.display="none";
-    document.getElementById("del-description").style.display="none";
-    document.getElementById("save-description").style.display="none";
-  }
-  handleCourseDescription() {
-    document.getElementById("course-description").style.visibility="hidden";
-    document.getElementById("Coure-description-input").style.display="block";
-    document.getElementById("del-description").style.display="block";
-    document.getElementById("save-description").style.display="block";
-  }
-  deleteDescription() {
-    document.getElementById("course-description").style.visibility="visible";
-    document.getElementById("Coure-description-input").style.display="none";
-    document.getElementById("del-description").style.display="none";
-    document.getElementById("save-description").style.display="none";
-  }
-  handleCourseCategory(){
-    document.getElementById("course-category").style.visibility="hidden";
-    document.getElementById("Course-category-select").style.display="block";
-    document.getElementById("del-category").style.display="block";
-    document.getElementById("save-category").style.display="block";
-  }
-  handleDeletCategory(){
-    document.getElementById("course-category").style.visibility="visible";
-    document.getElementById("Course-category-select").style.display="none";
-    document.getElementById("del-category").style.display="none";
-    document.getElementById("save-category").style.display="none";
-  }
-  handleInputChange(event){
-    this.setState({
-      courseName:event.target.value
-     }) 
-  }
-  handleDescription(event){
-    this.setState({
-      courseDescription:event.target.value
-     }) 
-  }
-
+//   _Save() {
+//     const data = {
+//         name: this.state.courseName,
+//         category: this.state.selectedCategory,
+//         description: this.state.courseDescription,
+//         code: this.state.courseCode,
+//         price: this.state.coursePrice,
+//         title: this.state.courseTime,
+//         left: this.state.selectValue
+//     };
+//     console.log( data );
+//     axios.post( "/", data )
+//         .then( res => {
+//             console.log( res );
+//             this.setState( { redirectStatus: true } );
+//         } )
+//         .catch( err => {
+//             console.log( err );
+//         } );
+// }
 _select(value){
 console.log(value)
 }
+
   render(){
     return (
-      <section className="container-fliud" style={{overflowX:"hidden"}}>
+      <section className="container" style={{overflowX:"hidden"}}>
         <div className="row">
           <div className="CreateCourse-main-card card">
             <div className="card-header bg-primary CreateCourse-main-card-header">
@@ -131,120 +103,175 @@ console.log(value)
                 </ol>
             </div>
             <div className="card-body row">
+            {/*vertical menu ****************************/}  
               <div className="col-md-3">
-                  <ul className="menu">
+                  <ul className="vertical-menu">
+                  <li className="row align-items-center justify-content-end p-4 mb-2 shadow-sm">
+                    <Link to="">ساخت دوره</Link></li>
                   {this.state.menu.map((item,index) =>(
-                    <li title="home"><Link to="/" className="active">home</Link></li>))}
+                    <li className="row align-items-center justify-content-end p-4 mb-2 shadow-sm"
+                     key={index}><Link to="/">{item.title}</Link></li>))}
                   </ul> 
               </div>
+            {/*course create info ****************************/} 
               <div className="col-md-9 pt-2">
                 <div className="row">
                   <div className="col-md-10">
-                            <h1 id="course-name" onClick={this.handleCourseName.bind(this)} className="mb-3"><i className="far fa-edit ml-3"></i>نام دوره‌ی آموزشی خود را مشخص نمایید</h1>
-                            <div className="col-md-12 row justify-content-end d-flex" id="Coure-name-div">
-                                  <button id="del-input" onClick={this.handleDeletInput.bind(this)} className="mb-3"><i className="fas fa-times"></i></button>
-                                  <button id="save-name" onClick={this.saveName.bind(this)} className="mb-3"><i className="fas fa-check"></i></button>
-                                  <input id="Coure-name-input" type="text" className="form-control form-control-sm col-md-9 text-left mb-3" value={this.state.courseName} onChange={this.handleInputChange.bind(this)}/> 
-                            </div> 
-                            <p  id="course-category" onClick={this.handleCourseCategory.bind(this)}> <i className="far fa-edit ml-3 " ></i> دسته‌بندی دوره خود را انتخاب کنید </p>
-                            <div className="col-md-12 row justify-content-end d-flex " id="Course-category-div">
-                                  <button id="del-category" onClick={this.handleDeletCategory.bind(this)} className="mb-3"><i className="fas fa-times"></i></button>
-                                  <button id="save-category" onClick={this.saveCategory} className="mb-3"><i className="fas fa-check"></i></button>
-                                  <select class="custom-select  form-control-sm col-md-9 mb-3"  id="Course-category-select">
-                                    <option selected >دسته بندی مناسب را انتخاب کنید</option>
-                                    <option value="One"></option>
-                                    <option value="Two"></option>
-                                    <option value="Three"></option>
+                    <form action="/action_page.php" >
+                  {/* title ChangeStatus ****************************/}
+                            {
+                              this.state.titleChangeStatus==false &&
+                              <h1 id="course-name" onClick={()=>{
+                                this.setState({titleChangeStatus:true})
+                              }} className="mb-3">
+                                <i className="far fa-edit ml-3"></i>
+                                {this.state.courseName}
+                              </h1>
+                            }
+                            {
+                              this.state.titleChangeStatus==true &&
+                              <div className="col-md-12 row justify-content-end d-flex">
+                                  <button onClick={()=>{
+                                this.setState({titleChangeStatus:false})
+                              }} className="mb-3"><i className="fas fa-check"></i></button>
+                                  <input type="text" className="form-control form-control-sm col-md-9 text-left mb-3" 
+                                  value={this.state.courseName} 
+                                  onChange={(event)=> {this.setState({courseName:event.target.value})}}/> 
+                              </div> 
+                            }
+                  {/* category ChangeStatus ****************************/}
+                            {
+                              this.state.categoryChangeStatus==false &&
+                              <p  id="course-category" onClick={()=>{
+                                this.setState({categoryChangeStatus:true})
+                              }}> 
+                              <i className="far fa-edit ml-3 " ></i>
+                                {this.state.selectedCategory} 
+                               </p>  
+                            } 
+                            {
+                              this.state.categoryChangeStatus==true &&
+                              <div className="col-md-12 row justify-content-end d-flex ">
+                                  <button onClick={()=>{
+                                    this.setState({categoryChangeStatus:false})
+                                  }} className="mb-3"><i className="fas fa-check"></i></button>
+                                   <select class="custom-select  form-control-sm col-md-9 mb-3" 
+                                   onChange={(text)=>{
+                                     this.setState({selectedCategory:text.target.selectedOptions[0].text})
+                                    }}
+                                   >
+                                  <option selected >دسته‌بندی مناسب را انتخاب کنید</option>
+                                    {this.state.category.map((item,index)=>(
+                                    <option value={item.id} key={index}> {item.text}</option>
+                                    ))}
                                   </select> 
-                            </div>
-                            <p  id="course-description" onClick={this.handleCourseDescription.bind(this)}> <i className="far fa-edit ml-3 " ></i> در مورد دوره‌ی آموزشی که قصد برگزاری آن را دارید، به طور خلاصه توضیح دهید </p>
-                            <div className="col-md-12 row justify-content-end d-flex" id="Coure-description-div">
-                                  <button id="del-description" onClick={this.deleteDescription.bind(this)}className="mb-3"><i className="fas fa-times"></i></button>
-                                  <button id="save-description" onClick={this.saveDescription.bind(this)} className="mb-3"><i className="fas fa-check"></i></button>
-                                  <textarea id="Coure-description-input"  className="form-control form-control-sm col-md-9 text-left mb-3"value={this.state.courseDescription} onChange={this.handleDescription.bind(this)}></textarea> 
-                            </div>
-                            <div className="btn-group">
-                                  <button type="button" className="btn btn-sm btn-primary dropdown-toggle rounded ml-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i className="fas fa-ellipsis-h"></i>
-                                  </button>
-                                  <div className="dropdown-menu">
-                                    <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                                    <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                                    <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                                  </div>
-                            </div>
-                            <Link to="/" className="btn btn-primary btn-sm ml-2 rounded" role="button" aria-pressed="true">مشاهده از دیدگاه کارآموز</Link>
-                            <Link  to="/" className="btn btn-primary btn-sm ml-2 rounded" role="button" aria-pressed="true">ویرایش اطلاعات دوره</Link>
-                            <div className="btn-group">
-                              <button type="button" className="btn btn-sm btn-primary dropdown-toggle rounded ml-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                افزودن
-                              </button>
-                              <div class="dropdown-menu">
-                                <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                                <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                                <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
-                                <div className="dropdown-divider"></div>
-                                <Link className="dropdown-item" to="/">متن<i className="far fa-file-alt mr-2"></i></Link>
                               </div>
-                            </div>  
+                            }         
+                  {/* description ChangeStatus ****************************/}
+                              {
+                                this.state.descriptionChangeStatus==false && 
+                                <p  id="course-description" onClick={()=>{
+                                  this.setState({descriptionChangeStatus:true})
+                                }}>
+                                <i className="far fa-edit ml-3 " ></i>
+                                 {this.state.courseDescription}
+                                </p>
+                              }
+                              {
+                                this.state.descriptionChangeStatus==true &&
+                              <div className="col-md-12 row justify-content-end d-flex">
+                                 <button onClick={()=>{
+                                   this.setState({descriptionChangeStatus:false})
+                                 }} className="mb-3"><i className="fas fa-check"></i></button>
+                                  <textarea onChange={(event)=>{
+                                    {this.setState({courseDescription:event.target.value})}
+                                  }} className="form-control form-control-sm col-md-9 text-left mb-3"
+                                  value={this.state.courseDescription}>
+                                    </textarea> 
+                              </div>
+                              }
                             <hr/>
-                            
+                  {/* course Info ****************************/} 
+                          {/* course code */}  
                             <div className="justify-content-end row">
-                                <input type="text" className="col-md-2 form-control form-control-sm text-left ml-4" value={this.state.courseCode}/>
-                                <h1 id="course-code" className="mb-3 margin-style mt-1 mr-1">کد دوره <i class="fas fa-tags mr-3"></i></h1>
+                                  <input id="courseCode" type="text" onChange={(event)=>{
+                                    this.setState({courseCode:event.target.value})
+                                  }
+                                  } className="col-md-2 form-control form-control-sm text-left "
+                                  value={this.state.courseCode}
+                                  placeholder=" p752 :مثال"/>
+                                  <label for="courseCode" id="course-code" className="col-md-3 mb-3 margin-style mt-1 ">
+                                    کد دوره 
+                                    <i class="fas fa-tags mr-3"></i></label>
                             </div>
+                          {/* course price */}
                             <div className="justify-content-end row">
-                                <input type="text" className="col-md-2 form-control form-control-sm text-left ml-3" value={this.state.coursePrice}/>
-                                <h1 id="course-price" className="mb-3 margin-style mt-1">هزینه دوره <i class="fas fa-shopping-cart mr-3"></i></h1>
+                                  <input id="coursePrice" type="text" onChange={(event)=>{
+                                    this.setState({coursePrice:event.target.value})
+                                  }
+                                  } className="col-md-2 form-control form-control-sm text-left "
+                                  value={this.state.coursePrice}
+                                  placeholder=" بر اساس ریال"/>
+                                  <label for="coursePrice" id="course-price" className="col-md-3 mb-3 margin-style mt-1 ">
+                                    هزینه دوره 
+                                  <i class="fas fa-shopping-cart mr-3"></i></label>
                             </div>
+                          {/* course time */}
                             <div className="justify-content-end row">
-                                <input type="text" className="col-md-2 form-control form-control-sm text-left ml-4" value={this.state.courseTime}/>
-                                <h1 id="course-time" className="mb-3 margin-style mt-1">طول دوره <i class="fas fa-clock mr-3"></i></h1>
+                                  <input id="courseTime" type="text" onChange={(event)=>{
+                                    this.setState({courseTime:event.target.value})
+                                  }
+                                  } className="col-md-2 form-control form-control-sm text-left "
+                                  value={this.state.courseTime}
+                                  placeholder=" تعداد روز"/>
+                                  <label for="courseTime" id="course-time" className="col-md-3 mb-3 margin-style mt-1 ">
+                                    طول دوره 
+                                  <i class="fas fa-clock mr-3"></i></label>
                             </div>
-                            <div className="justify-content-end row">
-                            
-                            <select className="form-control form-control-sm col-md-2 text-left ml-3" id="exampleFormControlSelect1 "  onChange={
-                                      (text)=>{this._select(text.target.value)}}>
-                                         {this.state.level.map((item,index) =>(
-                                      <option key={index}>{item.title}</option>
-                                         ))}
+                          {/* course time */}
+                            <div className="justify-content-end row ">
+                                <select class="form-control form-control-sm col-md-2 text-left" 
+                                   onChange={(text)=>{
+                                     this.setState({selectValue:text.target.selectedOptions[0].text})
+                                    }}id="courseLevel">
+                                    {this.state.level.map((item,index)=>(
+                                    <option value={item.id} key={index}> {item.title}</option>
+                                    ))}
                                 </select>
-
-                                <h1 id="course-code" className="mb-3 margin-style mt-1 mr-2">سطح دوره <i class="fas fa-tachometer-alt mr-2"></i></h1>
-                            </div>   
-                            <div class="file-upload-wrapper">
-                              <div class="card card-body view file-upload">
-                                  <div class="card-text file-upload-message">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <p>Drag and drop a file here or click</p>
-                                  </div>
-                                  <div class="mask rgba-stylish-slight"></div>
-                                  <div class="file-upload-errors-container">
-                                    <ul></ul>
-                                  </div>
-                                  <input type="file" id="input-file-now" class="file_upload"/><button type="button" class="btn btn-sm btn-danger">Remove<i class="far fa-trash-alt ml-1"></i></button>
-                                  <div class="file-upload-preview">
-                                    <span class="file-upload-render"></span>
-                                    <div class="file-upload-infos">
-                                        <div class="file-upload-infos-inner">
-                                          <p class="file-upload-filename"><span class="file-upload-filename-inner"></span></p>
-                                        </div>
-                                    </div>
-                                  </div>
-                              </div>
-                            </div>       
+                                <label for="courseLevel" id="course-level" className="col-md-3 mb-3 margin-style mt-1 ">سطح دوره <i class="fas fa-tachometer-alt mr-3"></i></label>
+                            </div>
+                            <hr/>
+                  {/* upload file ****************************/} 
+                            
+                  {/* submit button ****************************/} 
+                            <button class="form btn btn-sm btn-primary " type="submit" 
+                            // onClick={()=>{this._save}}
+                            >ثبت اطلاعات</button>  
+                        </form>      
                   </div>
                   <div className="col-md-2">
-                            <h1 id="pic-upload">: انتخاب عکس</h1>
-                            <img src="./images/logo-pic.png" className="upload-course-pic" onMouseOver={this.handleChange.bind(this)}/>
-                            <form onMouseLeave={this.handleLeave.bind(this)}>
-                              <div className="avatar" id="upload-avatar">
-                              <div  className="col-md-12 d-flex justify-content-center" >
-                                <i id="avatar-icon" className="fas fa-camera avatar-icon" ></i>
-                                </div>
-                                <input type="file" name="avatar" />
-                              </div>
-                            </form>
+                  {/* pic upload ****************************/}
+                              <h1 id="pic-upload">: انتخاب عکس</h1>
+                              {
+                                this.state.picMouseOver==false &&
+                                <img src="./images/logo-pic.png" className="upload-course-pic"
+                                 onMouseOver={()=>{
+                                  this.setState({picMouseOver:true})
+                                 }}/>
+                              }
+                              {
+                                this.state.picMouseOver==true && 
+                                <form onMouseLeave={()=>{
+                                  this.setState({picMouseOver:false})
+                                }}>
+                                  <div className="avatar" id="upload-avatar">
+                                  <div  className="col-md-12 d-flex justify-content-center" >
+                                    <i id="avatar-icon" className="fas fa-camera avatar-icon" ></i>
+                                    </div>
+                                    <input type="file" name="avatar" />
+                                  </div>
+                                </form>
+                              }      
                   </div> 
                 </div>
               </div>

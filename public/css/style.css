@@ -13,18 +13,27 @@
 body{
     font-family: IRANSansWeb;
 }
-.card{
-    display: inline-block;
-    margin: 100px;
+
+.home-card{
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 200px;
 }
-.card-img-top{
-    width: 290px;
-    height: 200px;
+.home-card h1{
+  font-size:1.2rem;
+  font-weight: bold;
 }
-/*********************************************welcome-page***********************************************/
+.home-card p{
+  font-size:0.9rem;
+}
+
+/*********************************************Create course-page***********************************************/
 .CreateCourse-main-card{
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     width: 100%;
+    margin-top:100px;
 }
 .page-path{
     list-style: none;
@@ -41,19 +50,17 @@ body{
 }
 
 /*upload image*/
-    .upload-course-pic{
+  .upload-course-pic{
         width: 7rem;
     }
   .avatar {
     width: 7.5em;
     height: 4em;
     background: #c1c1c1;
-    margin-top: -60px;
     position: relative;
     opacity: 0.7;
     border:0.5px solid;
     border-radius: 5px;
-    display: none;
   }
   .avatar input {
     width: 100%;
@@ -67,7 +74,6 @@ body{
     position: absolute;
     margin-top: 20px;
     opacity: 1;
-    display:none;
 
   }
   #course-name{
@@ -79,57 +85,28 @@ body{
     font-weight: bold;
   }
   #course-description{
-      visibility: visible;
     font-size: 0.8rem;
-  }
-  #Coure-name-input{
-      margin-right: -40px;
-      position: relative;
-      margin-top: -30px;
-      display: none;
-  }
-  #save-name{
-    margin-top: -30px;
-    display: none;
-  }
-  #del-input{
-    margin-top: -30px;
-    display: none;
-  }
-  #Coure-description-input{
-    margin-right: -40px;
-    position: relative;
-    margin-top: -30px;
-    display: none;
-  }
-  #save-description{
-    margin-top: -30px;
-    display: none;
-  }
-  #del-description{
-    margin-top: -30px;
-    display: none;
-  }
-  #Course-category-select{
-    margin-right: -40px;
-    position: relative;
-    margin-top: -30px;
-      display: none;
-     
-  }
-  #save-category{
-    margin-top: -30px;
-    display: none;
-  }
-  #del-category{
-    margin-top: -30px;
-    display: none;
   }
   .margin-style{
     font-size: 0.8rem;
     font-weight: bold;
   }
-  
+  .vertical-menu li {
+    list-style: none;
+    border: none;
+    border-radius: 10px;
+
+  }
+  .vertical-menu li:hover{
+    background-color: #007bff;
+  }
+ 
+  .vertical-menu a{
+    color: #000000;
+  }
+  .vertical-menu a:hover{
+    text-decoration: none;
+  }
 
   /*            Start Style Page Course                           */
 
@@ -283,6 +260,7 @@ text-decoration: none;
 
 
   /*            End Style Page Course                           */
+<<<<<<< HEAD
 
 
 @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
@@ -584,3 +562,5 @@ margin: 5px;
 }
 
   /*                End Pages Userinfo           */
+=======
+>>>>>>> e76cc0cb933a6509032ec66ccdf859bd4ceddd84
