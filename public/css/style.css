@@ -176,6 +176,9 @@ tr:hover .fa-ellipsis-h{
   display: none;
   /* text-align: center; */
 }
+.w-300px{
+  width: 300px;
+}
 .w-150px{
   width: 150px;
 }
@@ -207,6 +210,7 @@ tr:nth-child(even){background: #e9e8e8;}
   height: auto;
   /* background: red; */
   float: right;
+  
 }
 .formLeft{
   width: 50%;
@@ -259,11 +263,11 @@ text-decoration: none;
 }
 
 
+
   /*            End Style Page Course                           */
-<<<<<<< HEAD
 
 
-@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
+/* @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css"); */
 
 .menu {
   height: 100%;
@@ -472,6 +476,18 @@ text-decoration: none;
   font-size: 3rem;
 }
 
+/*                Start Pages Userinfo => tab : دوره آموزشی          */
+
+.tab-pane a{
+  color: #000000;
+}
+
+.courses table tr:hover {
+    background-color: rgba(49, 124, 255, 0.1);
+}
+
+/*                 End Pages Userinfo => tab : دوره آموزشی          */
+
 
   /*               Start Pages Userinfo           */
 
@@ -562,5 +578,3 @@ margin: 5px;
 }
 
   /*                End Pages Userinfo           */
-=======
->>>>>>> e76cc0cb933a6509032ec66ccdf859bd4ceddd84

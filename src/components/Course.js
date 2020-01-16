@@ -92,6 +92,7 @@ class Contact extends Component{
     return (
         <div style={{overflowX:"hidden"}}>
              <section className="container-fliud">
+               <div className="container">
                 <div className="row">
                     <div className="CreateCourse-main-card card">
                         <div className="card-header bg-primary CreateCourse-main-card-header">
@@ -178,7 +179,7 @@ class Contact extends Component{
                     </div>
                     
                 </div>
-                
+                </div>
               </section>
         </div>
     );

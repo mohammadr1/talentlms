@@ -5,11 +5,9 @@ import { Link } from 'react-router-dom';
 class About extends Component{
   render(){
     return (
-      <section class="row">
-        <div className="container welcome-main-card card">
-
+        <div style={{marginTop:60}}>
+          <h3>About</h3>
         </div>
-      </section>
     );
   }
 }
