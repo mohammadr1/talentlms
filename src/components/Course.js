@@ -91,7 +91,7 @@ class Contact extends Component{
   render(){
     return (
         <div style={{overflowX:"hidden"}}>
-             <section className="container-fliud">
+             <section className="container">
                 <div className="row">
                     <div className="CreateCourse-main-card card">
                         <div className="card-header bg-primary CreateCourse-main-card-header">
