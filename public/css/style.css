@@ -133,9 +133,13 @@ body{
 
   .btn-group{
     padding: 10px;
+    width: 0;
+    /* float: right; */
   }
 .viewCourseCatalog{
-  float: left;
+  /* float: left; */
+  width: 50%;
+  text-align: left;
 }
 .viewCourseCatalog a{
   display: inline-block;
@@ -521,6 +525,32 @@ text-decoration: none;
 }
 
 /*                End Pages Userinfo => tab : نشانها          */
+
+/*                Start Pages Userinfo => tab : جدول زمانی          */
+
+table.timeline tr th{
+  background: #007bff;
+  text-align: right;
+  padding: 5px 10px;
+  width: 100%;
+}
+table.timeline tr td{
+  /* background: #007bff; */
+  text-align: right;
+  padding: 5px 10px;
+  width: 100%;
+}
+table.timeline tr td span{
+  padding: 7px 15px;
+  text-align: center;
+  width: 70px;
+}
+table.timeline tr:hover{
+  background-color: rgba(49, 124, 255, 0.1);
+
+}
+/*                 End Pages Userinfo => tab : جدول زمانی          */
+
 
 
   /*               Start Pages Userinfo           */
