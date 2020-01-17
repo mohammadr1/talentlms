@@ -497,7 +497,7 @@ text-decoration: none;
   text-align: center;
   margin: 25px 0;
 }
-.badge-div, .learning-div, .pattern-div div{
+.badge-div div, .learning-div div, .pattern-div div{
   padding: 25px 0 0;
 }
 
