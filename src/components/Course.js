@@ -90,7 +90,7 @@ class Contact extends Component{
 
   render(){
     return (
-             <section className="container" style={{overflowX:"hidden"}}>
+             <section className="container" style={{overflow:"hidden"}}>
                 <div className="row">
                     <div className="CreateCourse-main-card card">
                         <div className="card-header bg-primary CreateCourse-main-card-header">
