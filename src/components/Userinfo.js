@@ -21,7 +21,7 @@ class Userinfo extends React.Component{
        ],
        courses:[
          {
-          id:1,
+          id : 1,
           course : "Advanced Features of TalentLMS",
           progress : "Not started",
           score : "-",
@@ -30,15 +30,51 @@ class Userinfo extends React.Component{
           time : "-",
          },
          {
-          id:1,
+          id : 1,
           course : "Advanced Features of TalentLMS",
           progress : "Not started",
           score : "-",
           enrolled : "1 hour ago",
           completiondata : "-",
           time : "-",
-         }
-       ]
+         },
+       ],
+       badge:[
+         {
+           id : 1,
+           imgClass : "fa fa-eercast fa-5x",
+           title : "عنوان badge",
+         },
+         {
+           id : 1,
+           imgClass : "fa fa-eercast fa-5x",
+           title : "عنوان badge",
+         },
+       ],
+       learning:[
+         {
+           id : 1,
+           imgClass : "fa fa-eercast fa-5x",
+           title : "عنوان learning",
+         },
+         {
+           id : 1,
+           imgClass : "fa fa-eercast fa-5x",
+           title : "عنوان learning",
+         },
+       ],
+       pattern:[
+         {
+           id : 1,
+           imgClass : "fa fa-eercast fa-5x",
+           title : "عنوان pattern",
+         },
+         {
+           id : 1,
+           imgClass : "fa fa-eercast fa-5x",
+           title : "عنوان pattern",
+         },
+       ],
 
      }
     }
@@ -172,7 +208,82 @@ class Userinfo extends React.Component{
                           <Link to="/userinfo"><i className="fa fa-download" aria-hidden="true" style={{float:'left',margin:20}}></i></Link>
                         </div>
                     </div>
-                    <div className="tab-pane fade" id="badges" role="tabpanel" aria-labelledby="badges-tab">badges</div>
+                    <div className="tab-pane fade" id="badges" role="tabpanel" aria-labelledby="badges-tab">
+                   
+                      {/* start blog badges */}
+                      <div className="bedges">
+                        <div className="card-header bg-primary CreateCourse-main-card-header">
+                            <ol className="row page-path mt-1">
+                              <li className="breadcrumb-item active " aria-current="page">صفحات فعالیت</li>
+                            </ol>
+                        </div>
+                        <div style={{padding:10}}>
+
+                          {this.state.badge.map((item, index) => (
+
+
+                            <div className="badge-div" key={index}>
+                              <i class={item.imgClass} aria-hidden="true"></i>
+                              <div>{item.title}</div>
+                            </div>
+
+
+                          ))}
+                        </div>
+                      </div>
+                      {/*  end blog badges */}
+
+                      
+                      {/* start blog learning */}
+                      <div className="bedges">
+                        <div className="card-header bg-primary CreateCourse-main-card-header">
+                            <ol className="row page-path mt-1">
+                              <li className="breadcrumb-item active " aria-current="page">صفحات آموزش</li>
+                            </ol>
+                        </div>
+                        <div style={{padding:10}}>
+
+                          {this.state.learning.map((item, index) => (
+
+
+                            <div className="learning-div" key={index}>
+                              <i class={item.imgClass} aria-hidden="true"></i>
+                              <div>{item.title}</div>
+                            </div>
+
+
+                          ))}
+                        </div>
+                      </div>
+                      {/*  end blog learning */}
+
+
+                      {/* start blog pattern */}
+                      <div className="bedges">
+                        <div className="card-header bg-primary CreateCourse-main-card-header">
+                            <ol className="row page-path mt-1">
+                              <li className="breadcrumb-item active " aria-current="page">صفحات الگو</li>
+                            </ol>
+                        </div>
+                        <div style={{padding:10}}>
+
+                          {this.state.pattern.map((item, index) => (
+
+
+                            <div className="pattern-div" key={index}>
+                              <i class={item.imgClass} aria-hidden="true"></i>
+                              <div>{item.title}</div>
+                            </div>
+
+
+                          ))}
+                        </div>
+                      </div>
+                      {/*  end blog pattern */}
+                      
+                                  
+                                  
+                    </div>
                     <div className="tab-pane fade" id="timeline" role="tabpanel" aria-labelledby="timeline-tab">timeline</div>
                   </div>
                 </div>

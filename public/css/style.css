@@ -489,6 +489,21 @@ text-decoration: none;
 /*                 End Pages Userinfo => tab : دوره آموزشی          */
 
 
+/*                Start Pages Userinfo => tab : نشانها          */
+
+.badge-div, .learning-div, .pattern-div{
+  width: 12%;
+  display: inline-block;
+  text-align: center;
+  margin: 25px 0;
+}
+.badge-div, .learning-div, .pattern-div div{
+  padding: 25px 0 0;
+}
+
+/*                End Pages Userinfo => tab : نشانها          */
+
+
   /*               Start Pages Userinfo           */
 
 
