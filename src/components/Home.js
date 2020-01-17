@@ -50,7 +50,7 @@ class Home extends Component{
                             <hr/>
                             <p className="text-muted">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
                             <hr/>
-                            <Link to="/" className="btn btn-primary w-100 btn-sm">بریم</Link>
+                            <Link to="/Userinfo" className="btn btn-primary w-100 btn-sm">بریم</Link>
                           </div>
                         </div>
                       </div>

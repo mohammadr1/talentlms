@@ -17,7 +17,7 @@ class CreateCourse extends React.Component{
       courseCode:"",
       coursePrice:"",
       courseTime:"",
-      selectValue:"",
+      courseLevel:"",
       selectedCategory:"دسته‌بندی دوره خود را انتخاب کنید",
 
 
@@ -63,7 +63,7 @@ class CreateCourse extends React.Component{
     console.log( this.state.courseDescription );
     console.log( this.state.courseCode );
     console.log( this.state.courseTime );
-    console.log( this.state.selectValue );
+    console.log( this.state.courseLevel );
   }
   catch(err){
     console.log(err)
@@ -80,7 +80,7 @@ console.log(value)
           <div className="CreateCourse-main-card card">
             <div className="card-header bg-primary CreateCourse-main-card-header">
                 <ol className="row page-path mt-1">
-                  <li className="breadcrumb-item"><Link className="first-page" to="/">خوش آمدید</Link></li>
+                  <li className="breadcrumb-item"><Link className="first-page" to="/">پنل مدیریت</Link></li>
                   <li className="breadcrumb-item active " aria-current="page">ساخت دوره آموزشی</li>
                 </ol>
             </div>
@@ -93,7 +93,7 @@ console.log(value)
                       <img className="ml-4" src="/images/create.png" alt="create-course" />
                     </li>
                     <li className="row align-items-center justify-content-end p-4 mb-2 shadow-sm">
-                      <Link to="">ویرایش دوره</Link>
+                      <Link to="/EditCourse">ویرایش دوره</Link>
                       <img className="ml-4" src="/images/edit.png" alt="course-edit" />
                     </li>
                     <li className="row align-items-center justify-content-end p-4 mb-2 shadow-sm">
@@ -116,7 +116,7 @@ console.log(value)
                               this.state.titleChangeStatus===false &&
                               <h1 id="course-name" onClick={()=>{
                                 this.setState({titleChangeStatus:true})
-                              }} className="mb-4">
+                              }} className="mb-3">
                                 <i className="far fa-edit ml-3"></i>
                                 {this.state.courseName}
                               </h1>
@@ -225,20 +225,21 @@ console.log(value)
                             <div className="justify-content-end row ">
                                 <select className="form-control form-control-sm col-md-2 text-left" 
                                    onChange={(text)=>{
-                                     this.setState({selectValue:text.target.selectedOptions[0].text})
+                                     this.setState({courseLevel:text.target.selectedOptions[0].text})
                                     }}id="courseLevel">
                                     {this.state.level.map((item,index)=>(
                                     <option value={item.id} key={index}> {item.title}</option>
                                     ))}
                                 </select>
-                                <label htmlFor="courseLevel" id="course-level" className="col-md-3 mb-3 margin-style mt-1 ">سطح دوره 
+                                <label htmlFor="courseLevel" id="course-level" className="col-md-3 mb-3 margin-style mt-1 ">
+                                  سطح دوره 
                                 <i className="fas fa-tachometer-alt mr-3"></i></label>
                             </div>
                             <hr/>
                   {/* upload file ****************************/} 
                                 <form>
-                                  <h1 id="pic-upload">
-                                      :آپلود ویدیو 
+                                  <h1 className="h1-size">
+                                      :آپلود ویدیوی معرفی 
                                   </h1>
                                   <div className="video" id="upload-video"> 
                                     <div  className="col-md-12 d-flex justify-content-center" >
@@ -248,14 +249,19 @@ console.log(value)
                                   </div>
                                 </form>
                   {/* submit button ****************************/} 
-                            <button className="form btn btn-sm btn-primary mt-3" type="submit" 
-                            onClick={()=>{this._save()}}
-                            >ثبت اطلاعات</button>  
+                            <div className="row justify-content-end "> 
+                                <p className="help mt-4">.جهت اضافه کردن ویدیو قسمت‌های مختلف دوره، پس از ثبت به بخش دوره‌های من مراجعه نمایید
+                                </p>
+                                <button className="form btn btn-sm btn-primary mt-3 ml-4" 
+                                 id="create-course" type="submit" 
+                                onClick={()=>{this._save()}}
+                                >ثبت اطلاعات</button>
+                            </div>
                         </form>      
                   </div>
                   <div className="col-md-2">
                   {/* pic upload ****************************/}
-                              <h1 id="pic-upload">: انتخاب عکس</h1>
+                              <h1 className="h1-size">: انتخاب عکس</h1>
                               {
                                 this.state.picMouseOver===false &&
                                 <img src="./images/logo-pic.png" className="upload-course-pic"
