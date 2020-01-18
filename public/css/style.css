@@ -549,6 +549,16 @@ table.timeline tr:hover{
   background-color: rgba(49, 124, 255, 0.1);
 
 }
+.form-group .label-name-addVideo, .form-group .label-search-addVideo{
+  margin: 10px;
+}
+.form-group{
+  width: 97%;
+  margin: 20px auto;
+}
+.fa-search{
+  margin: 10px;
+}
 /*                 End Pages Userinfo => tab : جدول زمانی          */
 
 

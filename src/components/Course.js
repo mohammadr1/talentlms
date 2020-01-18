@@ -102,11 +102,7 @@ class Contact extends Component{
                         <div className="btn-group">
                           <Link to="/" className="btn btn-primary">افزودن دوره های جدید</Link>
                         </div>
-                        <div className="viewCourseCatalog">
-                          <Link to="/">مشاهده کاتالوگ دوره</Link>
-                          <i className="fa fa-reply" aria-hidden="true"></i>
-                          <Link to="/"></Link>
-                        </div>
+                        
                         <table>
                           <thead >
                             <tr>

@@ -15,12 +15,6 @@ class Header extends Component{
                 <Link className="nav-link" to="/">Home</Link>
               </li>
               <li className="nav-item active">
-                <Link className="nav-link" to="/about">About </Link>
-              </li>
-              <li className="nav-item active">
-                <Link className="nav-link" to="/contact">Contact </Link>
-              </li>
-              <li className="nav-item active">
                 <Link className="nav-link" to="/CreateCourse">CreateCourse </Link>
               </li>
               <li className="nav-item active">
@@ -28,6 +22,9 @@ class Header extends Component{
               </li>
               <li className="nav-item active">
                 <Link className="nav-link" to="/userinfo">Userinfo </Link>
+              </li>
+              <li className="nav-item active">
+                <Link className="nav-link" to="/addvideo">AddVideo </Link>
               </li>
             </ul>
             <form className="form-inline mt-2 mt-md-0">
