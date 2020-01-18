@@ -2,6 +2,7 @@
 
 import Home from './components/Home';
 import CreateCourse from './components/CreateCourse';
+import EditCourse from './components/EditCourse';
 import Course from './components/Course';
 import Userinfo from './components/Userinfo';
 import AddVideo from './components/AddVideo';
@@ -18,6 +19,7 @@ export default [
     { path : "/Course", component : Course, exact : true},
     { path : "/userinfo", component : Userinfo, exact : true},
     { path : "/addvideo", component : AddVideo, exact : true},
+    { path : "/EditCourse", component : EditCourse, exact : true},
     
     ];
 
