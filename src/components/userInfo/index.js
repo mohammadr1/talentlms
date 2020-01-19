@@ -1,24 +1,13 @@
 import React,{ Component } from 'react';
 import { Link } from 'react-router-dom';
-import { directive } from '../../node_modules/@babel/types';
+import { directive } from '@babel/types';
+import OverView from './overView'
 
-
-class Userinfo extends React.Component{
+export default class Index extends Component{
   constructor(props){
     super(props);
      this.state = {
-      overview:[
-         {
-          id:1,
-          username :"m.mohammad",
-          email :"mahdir2302@gmail.com",
-          badges:1,
-          trainingTime : "0h, 30m",
-          CoursesNotStarted : 1,
-          completedCourses : 0,
-          coursesInProgress : 0,
-        }
-       ],
+     
        courses:[
          {
           id : 1,
@@ -135,64 +124,9 @@ class Userinfo extends React.Component{
                   </ul>
                   
                   <div className="tab-content" id="myTabContent">
-                  {this.state.overview.map((item, index) => (
-                    <div key={index} className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-
-                      <div className="row">
-                      <div className="userRight">
-                        <div className="idUser">
-                          <h3>{item.username}</h3>
-                    <p>{item.email}</p>
-                        </div>
-                        <div className="messages">
-                            <span className="badge badge-primary">SuperAdmin</span>
-                            <span className="badge badge-secondary">Account owner</span>
-                        </div>
-                      </div>
-                      <div className="userLeft">
-                      <button type="button" className="btn btn-success" > خروجی اکسل 
-                      <i className="fa fa-download" aria-hidden="true"></i>
-                      </button>
-                      </div>
-                      <hr />
-                      <div className="user-report">
-
-                      <div className="row">
-                      
-                      <div className="col borderL badges">
-                      <Link data-toggle="modal" data-target="#myModal">
-                        <h2>{item.badges}</h2>
-                        <p>نشانها</p>
-                        </Link>
-                      </div>
-                      
-                      <div className="col borderL">
-                        <h2>{item.trainingTime}</h2>
-                        <p>وقت تمرین</p>
-                      </div>
-                      <div className="col borderL coursesStarted">
-                        <h2>{item.CoursesNotStarted}</h2>
-                        <p>دوره های در انتظار شروع</p>
-                      </div>
-                      <div className="col borderL">
-                        <h2>{item.completedCourses}</h2>
-                        <p>دوره های تمام شده</p>
-                      </div>
-                      <div className="col">
-                        <h2>{item.coursesInProgress}</h2>
-                        <p>دوره های در حال برگذاری</p>
-                      </div>
+                    <div className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                      <OverView id="1" />
                     </div>
-                    </div>
-
-                    </div>
-   
-                    <div className="boxNemodar">
-                      نمودار انتخابی 
-                    </div>
-
-                   </div>
-                    ))}
                     
                     <div className="tab-pane fade courses" id="courses" role="tabpanel" aria-labelledby="courses-tab">
                     <table>
@@ -336,7 +270,7 @@ class Userinfo extends React.Component{
 </div>
               <div id="myModal" className="modal fade" role="dialog">
                 <div className="modal-dialog">
-                {this.state.overview.map((item, index) => (
+               {/*
                   <div key={index} className="modal-content">
                     
                     <div className="modal-header" >
@@ -352,7 +286,7 @@ class Userinfo extends React.Component{
                     </div>
                   
                   </div>
-                ))}
+               */}
               </div>             
             </div>
 
@@ -362,6 +296,3 @@ class Userinfo extends React.Component{
     );
   }
 }
-
-export default Userinfo;
-

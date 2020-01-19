@@ -4,7 +4,7 @@ import Home from './components/Home';
 import CreateCourse from './components/CreateCourse';
 import EditCourse from './components/EditCourse';
 import Course from './components/Course';
-import Userinfo from './components/Userinfo';
+import Userinfo from './components/userInfo/index';
 import AddVideo from './components/AddVideo';
 
 
