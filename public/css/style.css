@@ -113,8 +113,7 @@ body{
   .vertical-menu li {
     list-style: none;
     border: none;
-    border-radius: 10px;
-
+    border-radius: .25em;
   }
   .vertical-menu li:hover{
     background-color: #007bff;
@@ -385,6 +384,7 @@ table.timeline tr:hover{
 .messages .badge{
   margin-right: 10px;
   padding: 7px;
+  border-radius: .25rem;
 }
 .userRight{
   width: 50%;
@@ -411,7 +411,7 @@ table.timeline tr:hover{
   height:auto;
   background: rgb(239, 249, 255);
   border: 2px solid rgb(224, 243, 255);
-  border-radius: 20px;
+  border-radius: .25rem;
   margin: 0 auto;
   text-align: center;
   line-height: 50px;
@@ -445,6 +445,8 @@ margin: 5px;
   margin: 20px;
   text-align: center;
   padding-top: 250px;
+  border-radius: .25rem .25rem 0 0;
+
 }
 
   /*                End Pages Userinfo           */
