@@ -18,6 +18,9 @@ class Header extends Component{
                 <Link className="nav-link" to="/CreateCourse">CreateCourse </Link>
               </li>
               <li className="nav-item active">
+                <Link className="nav-link" to="/EditCourse">EditCourse </Link>
+              </li>
+              <li className="nav-item active">
                 <Link className="nav-link" to="/course">Course </Link>
               </li>
               <li className="nav-item active">

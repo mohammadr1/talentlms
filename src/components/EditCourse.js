@@ -74,8 +74,8 @@ class EditCourse extends React.Component{
                     <div className="CreateCourse-main-card card">
                         <div className="card-header bg-primary CreateCourse-main-card-header">
                             <ol className="row page-path mt-1">
-                            <li className="breadcrumb-item"><Link className="first-page" to="/home">پنل مدیریت</Link></li>
-                            <li className="breadcrumb-item"><Link className="first-page" to="/course">دروه‌های من</Link></li>
+                            <li className="breadcrumb-item"><Link className="first-page" to="/Home">پنل مدیریت</Link></li>
+                            <li className="breadcrumb-item"><Link className="first-page" to="/Course">دروه‌های من</Link></li>
                             <li className="breadcrumb-item active " aria-current="page">ویرایش دوره</li>
                             </ol>
                         </div>
@@ -302,7 +302,7 @@ class EditCourse extends React.Component{
                                 <tbody>
                                     {this.state.users.map((item,index) =>(
                                     <tr key={index}> 
-                                        <td><Link to="/EditCourse"><i className="fa fa-times" aria-hidden="true"></i></Link></td>   
+                                        <td><Link to="/EditCourse" ><i className="fa fa-times" aria-hidden="true"></i></Link></td>   
                                         <td>{item.score}</td>
                                         <td>{item.time}</td>
                                         <td><Link to="/EditCourse">{item.name}</Link></td>
