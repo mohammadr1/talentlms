@@ -2,17 +2,17 @@ import React,{ Component } from 'react';
 import { Link } from 'react-router-dom';
 
 
-export default class Index extends Component{
+export default class Contact extends Component{
   constructor(props){
     super(props);
     this.state = {
       data:[
         {
-            id:1,
-            title:"php",
-            category:"gsdfgds",
-            lastupdate:"12/5/1360",
-            checked : false
+        id:1,
+        title:"php",
+        category:"gsdfgds",
+        lastupdate:"12/5/1360",
+        checked : false
       },
       {
         id:2,
