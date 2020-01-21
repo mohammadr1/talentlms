@@ -29,9 +29,6 @@ class Header extends Component{
               <li className="nav-item active">
                 <Link className="nav-link" to="/addvideo">AddVideo </Link>
               </li>
-              <li className="nav-item active">
-                <Link className="nav-link" to="/editcourse">Edit Course </Link>
-              </li>
             </ul>
             <form className="form-inline mt-2 mt-md-0">
               <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
