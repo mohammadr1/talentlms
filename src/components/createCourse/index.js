@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { directive } from '../../node_modules/@babel/types';
-import VerticalMenu from './sections/verticalMenu';
+import VerticalMenu from '../sections/verticalMenu';
 
 class CreateCourse extends React.Component{
   constructor(props){
